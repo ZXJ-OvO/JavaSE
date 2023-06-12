@@ -12,19 +12,14 @@ package com.zxj.day01;
  */
 public class Question07 {
     public static void main(String[] args) {
-        // 姓名
         String name = "张三";
-        // 性别
         String gender = "男";
-        // 年龄
         int age = 20;
-        // 地址
         String address = "美国芝加哥";
-        // 余额
         double money = 88.88;
 
         System.out.println("************************");
-        System.out.println("我的姓名是：" + name); // 在输出语句中将变量与字符串拼接
+        System.out.println("我的姓名是：" + name);
         System.out.println("我的性别是：" + gender);
         System.out.println("我的年龄是：" + age);
         System.out.println("我的地址是：" + address);

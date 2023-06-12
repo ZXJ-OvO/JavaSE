@@ -5,9 +5,9 @@ package com.zxj.day01;
  */
 public class Question06 {
     public static void main(String[] args) {
-        int a = 10; // 定义整数变量a
-        int b = 20; // 定义整数变量b
-        int c = a + b; // 定义整数变量c，将a + b的结果赋值给c
-        System.out.println(a + " + " + b + " = " + c); // 在输出语句中将变量与字符串拼接
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+        System.out.println(a + " + " + b + " = " + c);
     }
 }
