@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class Question05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("a和尚身高：");
         double a = sc.nextDouble();
         System.out.print("b和尚身高：");
@@ -22,7 +21,6 @@ public class Question05 {
         bubbleSort(array);
         System.out.println(array[2]);
     }
-
     public static void bubbleSort(Double[] arr) {
         double temp = 0;
         for (int i = arr.length - 1; i > 0; i--) {
