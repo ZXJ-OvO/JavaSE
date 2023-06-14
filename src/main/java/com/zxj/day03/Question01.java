@@ -17,6 +17,5 @@ public class Question01 {
                 System.out.println("三位数中符合水仙花数的为：" + i);
             }
         }
-
     }
 }
