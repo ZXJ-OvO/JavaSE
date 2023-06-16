@@ -1,6 +1,8 @@
 package com.zxj.day07;
 
-
+/**
+ * 打印菱形
+ */
 public class Question11 {
     public static void main(String[] args) {
         for (int i = 1; i <= 10; i++) print(i);
