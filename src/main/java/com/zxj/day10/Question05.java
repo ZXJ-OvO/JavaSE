@@ -1,56 +1,41 @@
 package com.zxj.day10;
 
-import java.util.Scanner;
+import lombok.Data;
 
 /**
- * 1) 手机号码长度必须为11位数字;
- * 2) 手机号码第一位必须要是1;
+ * 1.定一个OldPhone类,定义两个私有属性brand和price,定义空参和有参构造方法,get/set方法
+ * 2.在OldPhone类中,定义一个打电话的方法,传递姓名的参数,方法体内输出给谁打电话
+ * 3.在OldPhone类中,定义一个发短信的方法,直接输出"发短信"
+ * 4.定一个子类NewPhone,继承OldPhone类,在子类中定义玩游戏的特有方法,直接输出内容"玩游戏"
+ * 5.定义测试类,创建NewPhone类对象,调用set方法为属性赋值,调用get方法获取属性值
+ * 6.调用从父类中继承过来的方法以及自己特有的方法.
+ * 注意：Lombok注解生成的代码都是public修饰的
+ * 4.定义一个来电显示的方法,输出内容为"显示手机号",
+ * 4.定一个子类NewPhone,继承OldPhone类,在子类中重写来电显示的方法,输出内容为"显示手机号","显示归属地","显示头像"
+ * 5.定义测试类,创建NewPhone类对象,调用set方法为属性赋值,调用get方法获取属性值
+ * 6.调用从父类中继承过来的方法以及重写的方法
  */
-
 public class Question05 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("请输入手机号码：");
-        String phoneNumber = scanner.nextLine();
-
-        if (checkPhone(phoneNumber)) {
-            String lastFourDigits = phoneNumber.substring(phoneNumber.length() - 4);
-            System.out.println("手机号码后四位：" + lastFourDigits);
-        } else {
-            System.out.println("手机号码错误");
-        }
+        NewPhone newPhone = new NewPhone();
+        newPhone.setBrand("华为");
+        newPhone.setPrice(99.8);
+        System.out.println(newPhone.getBrand() + "：" + newPhone.getPrice());
     }
 
-    /**
-     * ^       表示匹配字符串的开头
-     * 1       表示手机号码的第一位必须是数字 1
-     * \\d{10} 表示匹配后面的 10 位数字
-     * $       表示匹配字符串的结尾
-     */
-    public static boolean checkPhone(String phoneNumber) {
-        String pattern = "^1\\d{10}$";
-        return phoneNumber.matches(pattern);
+}
+
+@Data
+class OldPhone {
+    private String brand;
+    private Double price;
+}
+
+
+class NewPhone extends OldPhone {
+
+    private void play() {
+        System.out.println("打游戏");
     }
 }
-/*
-    \d       匹配任意数字字符（0-9）。
-    \D       匹配任意非数字字符。
-    \w       匹配任意字母、数字或下划线字符。
-    \W       匹配任意非字母、数字或下划线字符。
-    \s       匹配任意空白字符，包括空格、制表符、换行符等。
-    \S       匹配任意非空白字符。
-    .        匹配任意字符，除了换行符 \n。
-    []       字符类，匹配方括号内的任意字符。
-    [^]      否定字符类，匹配除了方括号内的字符以外的任意字符。
-    *        匹配前面的元素零次或多次。
-    +        匹配前面的元素一次或多次。
-    ?        匹配前面的元素零次或一次。
-    {n}      匹配前面的元素恰好 n 次。
-    {n,}     匹配前面的元素至少 n 次。
-    {n,m}    匹配前面的元素至少 n 次且不超过 m 次。
-    ()       捕获组，将匹配的部分进行分组。
-    |        逻辑 OR，匹配两个或多个选择之一。
-    ^        匹配字符串的开头。
-    $        匹配字符串的结尾。
- */
 
