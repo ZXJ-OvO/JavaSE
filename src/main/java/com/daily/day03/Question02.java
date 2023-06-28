@@ -1,5 +1,6 @@
 package com.daily.day03;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -8,10 +9,13 @@ import java.util.Random;
 public class Question02 {
     public static void main(String[] args) {
         Random random = new Random();
-        int num = random.nextInt(100) + 1;
-        int left = 1;
-        int right = 100;
-        for (int i = 0; i < 100; i++) {
+        int index = random.nextInt(100) + 1;
+        int[] arr = new int[100];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
         }
+        int num = arr[index];
+        int i = Arrays.binarySearch(arr, 1, 100, num);
+        System.out.println("随机数为：" + num + "，猜出的数字的索引为：" + i);
     }
 }
