@@ -10,12 +10,12 @@ package com.zxj.day13;
 public class Question13 {
     public static void main(String[] args) {
 
-        String regex = "^[a-zA-Z0-9_]{3,16}$\n";
+        String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*_).{4,16}$";
         String regex2 = "^[a-zA-Z0-9][a-zA-Z0-9.]+[a-zA-Z0-9]+$\n";
         String regex3 = "^[a-zA-Z0-9_]+@[a-zA-Z.]+$\n";
 
         //校验
-        String username = "zX1j_";
+        String username = "qwA1_";
         String password = "。/zxj123";
         String email = "/zxjOvO@gmail.com";
 
