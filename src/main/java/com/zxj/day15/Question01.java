@@ -44,14 +44,12 @@ public class Question01 {
         }
 
         //Lambda表达式（forEach）遍历集合
-/*
         list.forEach(new Consumer<String>() {
             @Override
             public void accept(String s) {
                 System.out.println(s);
             }
         });
-*/
         list.forEach(s -> System.out.println(s));
 
     }
