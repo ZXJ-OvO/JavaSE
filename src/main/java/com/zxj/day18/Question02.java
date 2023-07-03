@@ -13,10 +13,8 @@ public class Question02 {
         System.out.println(sum(5));
     }
 
-    public static int sum(int n) {
-        if (n == 1) {
-            return 1;
-        }
-        return sum(n - 1) + n;
+    public static int sum(int i) {
+        if (i == 1) return 1;
+        return sum(i - 1) + i;
     }
 }

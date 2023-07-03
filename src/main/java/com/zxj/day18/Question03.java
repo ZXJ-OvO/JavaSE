@@ -21,10 +21,7 @@ public class Question03 {
     }
 
     public static int getNum(int count) {
-        if (count == 10) {
-            return 1;
-        }
-        count++;
-        return 2 * getNum(count) + 2;
+        if (count == 10) return 1;
+        return 2 * getNum(count + 1) + 2;
     }
 }

@@ -1,6 +1,8 @@
 package com.zxj.day18;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 /**
  * 1 byte = 8 bit
@@ -56,8 +58,45 @@ public class Question05 {
         // 绝对路径
         File file5 = new File("D:\\project\\java\\JavaSE\\JavaSE\\JavaSE\\src\\main\\java\\com\\zxj\\day18\\Question05.java");
 
-        // 相对路径
-        File file6 = new File("JavaSE\\JavaSE\\src\\a.txt");
+        // 相对路径 以src为参照点
+        File file6 = new File("src\\main\\resources\\a.txt");
         System.out.println(file6.length());
+
+        System.out.println("---------------------------------------------------------------------------");
+        File file = new File("src\\main\\resources\\a.txt");
+        System.out.println(file.exists());  // 用于判断文件是否存在
+
+        System.out.println(file.isFile());  // 用于判断是否是文件
+
+        System.out.println(file.isDirectory());  // 用于判断是否是文件夹
+
+        System.out.println(file.getName());  // 用于获取文件名
+
+        System.out.println(file.length());  // 用于获取文件大小
+
+        System.out.println(file.lastModified()); // 用于获取文件最后修改时间
+
+        String formatted = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(file.lastModified());
+        System.out.println(formatted);
+
+        System.out.println(file.getPath());  // 用于获取创建文件时得到的文件路径，创建时使用的是相对路径就获取相对路径，使用的是绝对路径就获取绝对路径
+
+        System.out.println(file.getAbsolutePath());  // 用于获取文件绝对路径
+
+        System.out.println("---------------------------------------------------------------------------");
+
+        File file7 = new File("src/main/resources/b.txt");
+        try {
+            System.out.println(file7.createNewFile());  // 用于创建文件，如果文件已存在则返回false
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        File file8 = new File("src/main/resources/c");
+        file8.mkdir();  // 用于创建文件夹，如果文件夹已存在则返回false只能创建一级目录文件夹
+        File file9 = new File("src/main/resources/d/e/f");
+        System.out.println(file9.mkdirs()); // 用于创建多级文件夹，如果文件夹已存在则返回false可以创建多级目录文件夹
+
+        System.out.println(file7.delete());  // 用于删除文件和非空文件夹，如果文件不存在则返回false
     }
 }
