@@ -6,10 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
- * 需求：将某个磁盘的文件夹拷贝到另一个文件夹下去，包括文件夹中的全部信息
- * 分析：
- * ①：IO默认不可以拷贝文件夹
- * ②：我们需要遍历文件夹，如果是文件则拷贝过去，如果是文件夹则要进行1-1创建，继续复制内容
+ * 将某个磁盘的文件夹拷贝到另一个文件夹下去，包括文件夹中的全部内容
  */
 public class Question15 {
     public static void main(String[] args) throws Exception {
