@@ -20,6 +20,7 @@ public class Question03 {
                     i--;
                 }
             }
+
         }
         Arrays.sort(ints);
         System.out.println(Arrays.toString(ints));
