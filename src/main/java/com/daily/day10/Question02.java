@@ -1,4 +1,4 @@
-package com.daily.day10Test;
+package com.daily.day10;
 
 import java.util.ArrayList;
 
