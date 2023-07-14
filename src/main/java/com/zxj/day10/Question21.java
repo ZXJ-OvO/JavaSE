@@ -27,7 +27,7 @@ public class Question21 {
         masterCard.setBalance(1000.0);
         secondaryCard.setId(getCardId());
         secondaryCard.setUser("上条当麻");
-        secondaryCard.setBalance(1000.0);
+        secondaryCard.setBalance(masterCard.getBalance());
 
         System.out.println("-----------------------------------------");
 
