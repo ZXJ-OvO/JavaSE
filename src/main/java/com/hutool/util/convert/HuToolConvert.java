@@ -1,4 +1,4 @@
-package com.hutool.convert;
+package com.hutool.util.convert;
 
 
 import cn.hutool.core.convert.Convert;
@@ -8,6 +8,8 @@ import java.util.Arrays;
 
 public class HuToolConvert {
     public static void main(String[] args) {
+
+
 
         // 转换为字符串
         Integer[] integers = {1, 2, 3, 4, 5};

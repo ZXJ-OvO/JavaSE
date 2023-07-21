@@ -1,4 +1,4 @@
-package com.hutool.math;
+package com.hutool.util.number;
 
 import cn.hutool.core.math.Calculator;
 import com.customer.BigDecimalUtil;

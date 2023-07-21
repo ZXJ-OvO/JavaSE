@@ -1,9 +1,6 @@
 package com.hutool.date;
 
-import cn.hutool.core.date.DateField;
-import cn.hutool.core.date.DateTime;
-import cn.hutool.core.date.DateUnit;
-import cn.hutool.core.date.Week;
+import cn.hutool.core.date.*;
 
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -11,7 +8,7 @@ import java.util.TimeZone;
 /**
  * cn.hutool.core.date.Date  日期核心API
  */
-public class Date {
+public class HutoolDateTime {
     public static void main(String[] args) throws InterruptedException {
 
         System.out.println("-------------------------------------------- 静态方法\n");
@@ -77,6 +74,8 @@ public class Date {
         System.out.println("获取时区ID：\t" + dateTime2.getZoneId());
         System.out.println("设置时区：\t" + dateTime2.setTimeZone(TimeZone.getTimeZone("Asia/Tokyo")));
 
+        System.out.println("获取这个月的最后一天：\t" + dateTime2.getLastDayOfMonth());
+
 
         System.out.println("-------------------------------------------- 日期判断\n");
 
@@ -125,5 +124,29 @@ public class Date {
         System.out.println("是否为本月的最后一天：\t" + dateTime5.isLastDayOfMonth());
         System.out.println("获得本月的最后一天：\t" + dateTime2.getLastDayOfMonth());
 
+
+        System.out.println("当前时间的时间戳：\t" + DateUtil.current());
+        System.out.println("获取指定年数的总天数：\t" + DateUtil.lengthOfYear(2023));
+
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("                            ChineseDate");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+
+        // 通过农历构建
+        ChineseDate chineseDateLunar = new ChineseDate(1989, 6, 4);
+
+        // 通过公历构建
+        ChineseDate date = new ChineseDate(DateUtil.parseDate("1989-6-4"));
+        System.out.println(chineseDateLunar);
+        System.out.println(date);
+
+        // 提供了天干地支、生肖等各种api
+
+
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("                            LocalDateTimeUtil");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+
+        //LocalDateTimeUtil
     }
 }

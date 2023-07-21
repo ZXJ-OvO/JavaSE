@@ -1,7 +1,5 @@
-package com.hutool.system;
+package com.hutool.util.system;
 
-import cn.hutool.bloomfilter.BitMapBloomFilter;
-import cn.hutool.extra.emoji.EmojiUtil;
 import cn.hutool.system.SystemUtil;
 
 /**
