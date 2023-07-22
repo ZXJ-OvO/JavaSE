@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 public class Question15 {
     public static void main(String[] args) {
 
+        long l = System.currentTimeMillis();
         // 定义奖项数组,并为其设置值
         ArrayList<Awards> awards = CollUtil.newArrayList(
                 new Awards("一等奖", 1, 0, 1),
@@ -32,22 +34,28 @@ public class Question15 {
                 new Awards("谢谢惠顾", 4, 6, 10));
 
         ArrayList<Integer> list = CollUtil.newArrayList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-
-        for (int i = 0; i < 100; i++) {
-            int random = (int) (Math.random() * 10);
+        int random = 0;
+        for (int i = 0; i < 150; i++) {
+            random = (int) (Math.random() * 10);
             if (random == 0) {
                 System.out.println("恭喜你抽中了" + awards.get(0).getName());
+                continue;
             }
             if (random >= 1 && random < 3) {
                 System.out.println("恭喜你抽中了" + awards.get(1).getName());
+                continue;
             }
             if (random >= 3 && random < 6) {
                 System.out.println("恭喜你抽中了" + awards.get(2).getName());
+                continue;
             }
             if (random >= 6 && random < 10) {
                 System.out.println("恭喜你抽中了" + awards.get(3).getName());
+                continue;
             }
         }
+        long l1 = System.currentTimeMillis();
+        System.out.println(l1 - l);
 
 
     }
