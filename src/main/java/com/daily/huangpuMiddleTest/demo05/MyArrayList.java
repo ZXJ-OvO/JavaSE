@@ -1,41 +1,30 @@
-package com.zxj.day23;
+package com.daily.huangpuMiddleTest.demo05;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.ConcurrentModificationException;
+import java.util.Objects;
 import java.util.function.Consumer;
 
-/**
- * 自定义ArrayList
- */
-public class ArrayList<E> extends AbstractList<E> implements List<E> {
-    /**
-     * 默认初始容量大小
-     */
+
+public class MyArrayList<E> {
+
     private static final int DEFAULT_CAPACITY = 10;
     private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
-    /**
-     * 保存ArrayList数据的数组 transient修饰的关键字不会被序列化与
-     */
-    transient Object[] elementData;
-    /**
-     * ArrayList 所包含的元素个数
-     */
+
+    public Object[] elementData;
+
     private int size;
-    /**
-     * 要分配的最大数组大小
-     */
+
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 
-    /**
-     * 默认无参构造函数，初始化为10，也就是说初始其实是空数组 当添加第一个元素的时候数组容量才变成10
-     */
-    public ArrayList() {
+    public int modCount = 0;
+
+
+    public MyArrayList() {
         this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
     }
 
-    /**
-     * forEach方法
-     */
-    @Override
+
     public void forEach(Consumer<? super E> action) {
         Objects.requireNonNull(action);
         final int expectedModCount = modCount;
@@ -46,9 +35,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         if (modCount != expectedModCount) throw new ConcurrentModificationException();
     }
 
-    /**
-     * 增
-     */
+
     public boolean add(E e) {
         int minCapacity = size + 1;
 
@@ -71,11 +58,9 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         return true;
     }
 
-    /**
-     * 删
-     */
+
     public E remove(int index) {
-        rangeCheck(index);
+        if (index >= size) throw new IndexOutOfBoundsException();
         modCount++;
         E oldValue = elementData(index);
         int numMoved = size - index - 1;
@@ -84,40 +69,43 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         return oldValue;
     }
 
-    /**
-     * 改
-     */
+
     public E set(int index, E element) {
-        rangeCheck(index);
+        if (index >= size) throw new IndexOutOfBoundsException();
         E oldValue = elementData(index);
         elementData[index] = element;
         return oldValue;
     }
 
-    /**
-     * 查
-     */
+
     public E get(int index) {
-        rangeCheck(index);
+        if (index >= size) throw new IndexOutOfBoundsException();
         return elementData(index);
     }
 
-    /**
-     * 返回此列表中的元素数。
-     */
+
     public int size() {
         return size;
     }
 
-    /**
-     * 检查给定的索引是否在范围内。
-     */
-    private void rangeCheck(int index) {
-        if (index >= size) throw new IndexOutOfBoundsException();
-    }
 
     @SuppressWarnings("unchecked")
     E elementData(int index) {
         return (E) elementData[index];
+    }
+
+    public void add(E e, int index) {
+        if (index >= size) throw new IndexOutOfBoundsException();
+        modCount++;
+        final int s;
+        Object[] elementData;
+        if ((s = size) == (elementData = this.elementData).length)
+            // TODO grow
+            // elementData = ;
+            System.arraycopy(elementData, index,
+                    elementData, index + 1,
+                    s - index);
+        elementData[index] = index;
+        size = s + 1;
     }
 }
