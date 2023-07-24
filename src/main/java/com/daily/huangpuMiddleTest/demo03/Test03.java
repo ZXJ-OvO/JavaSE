@@ -92,9 +92,9 @@ public class Test03 {
 
             System.out.print(name.get(i));
             if (i == id - 1) {
-                System.out.print("数量：" + (certs.get(i).getSum() - 1));
+                System.out.print("数量：" + (certs.get(i).getSum() - 1) + " 升\n");
             } else {
-                System.out.print("数量：" + (certs.get(i).getSum()));
+                System.out.print("数量：" + (certs.get(i).getSum()) + " 升\n");
             }
         }
         System.out.println();

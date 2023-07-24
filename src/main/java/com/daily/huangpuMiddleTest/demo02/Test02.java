@@ -42,52 +42,40 @@ public class Test02 {
         HashMap<String, Integer> locationMap = new HashMap<>();
         ArrayList<String> locationList = new ArrayList<>();
 
-        for (int i = 0; i < students.size(); i++) {
-            Student student = students.get(i);
-            String name = student.getAddress();
+        for (Student student : students) {
             String[] locationArray = StrSplitter.splitToArray(student.getAddress(), "-", 0, true, true);
             System.out.println(student.getStuName() + ": " + Arrays.toString(locationArray));
-            /*
-                张无忌: [东湖, 黄鹤楼]
-                赵敏: [黄鹤楼, 归元禅寺]
-                周芷若: [木兰文化区, 东湖]
-                小昭: [东湖]
-                灭绝: [归元禅寺]
-             */
-            for (int j = 0; j < locationArray.length; j++) {
-                locationList.add(locationArray[j]);
-            }
+            Collections.addAll(locationList, locationArray);
         }
-        System.out.println(locationList);
+        System.out.println("\n地点数据：" + locationList);
 
 
-        for (int i = 0; i < locationList.size(); i++) {
-            String location = locationList.get(i);
+        for (String location : locationList) {
             if (locationMap.containsKey(location)) {
                 locationMap.put(location, locationMap.get(location) + 1);
             } else {
                 locationMap.put(location, 1);
             }
         }
-        locationMap.forEach((s, i) -> System.out.print("景点名称：" + s + "  选择次数：" + i + "\n"));
+        locationMap.forEach((s, i) -> System.out.print("景点名称：" + s + "\t选择次数：" + i + "\n"));
 
-        System.out.println("根据去的人数排序后的结果：");
+        System.out.println("\n根据去的人数排序后的结果：");
         Map<String, Integer> map = MapUtil.sortByValue(locationMap, true);
-        map.forEach((s, i) -> System.out.print("景点名称：" + s + "  选择次数：" + i + "\n"));
+        map.forEach((s, i) -> System.out.print("景点名称：" + s + "\t选择次数：" + i + "\n"));
 
         Set<String> set = map.keySet();
         Object[] array = set.toArray();
-        System.out.println("人数最多的景点：" + array[0]);
+        System.out.println("\n人数最多的景点：" + array[0] + "\n");
         String bestLocation = (String) array[0];
         System.out.println("以下的人没有前往" + bestLocation);
+
         int count = 0;
         OUT:
-        for (int i = 0; i < students.size(); i++) {
-            Student student = students.get(i);
+        for (Student student : students) {
             String address = student.getAddress();
             String[] arrays = StrSplitter.splitToArray(address, "-", 0, true, true);
-            for (int j = 0; j < arrays.length; j++) {
-                if (arrays[j].equals(bestLocation)) {
+            for (String s : arrays) {
+                if (s.equals(bestLocation)) {
                     count = 0;
                     continue OUT;
                 } else {
