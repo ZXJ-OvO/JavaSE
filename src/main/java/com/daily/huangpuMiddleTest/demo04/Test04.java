@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.function.BiConsumer;
 
 /**
  * 上三天，休息一天，周六日双休，然后顺延上三天班休息一天。该员工第一次休息日是2022-03-02日。
@@ -27,8 +26,6 @@ public class Test04 {
         DateTime theFirstFreeDay = DateUtil.parseDate("2022-03-02");
         // 把输入的时间和第一次休假时间做成时间日期对象
         Scanner scanner = new Scanner(System.in);
-
-
         DateTime inputDateTime = null;
         while (true) {
             System.out.println("请输入年份");
@@ -45,10 +42,8 @@ public class Test04 {
             break;
         }
         getFreeDayCount(inputDateTime, theFirstFreeDay);
-
-
+        System.out.println("------------------------------------------");
         HashMap<Integer, Integer> map = new HashMap<>();
-
         inputDateTime = DateUtil.parseDate("2022-07-01");
         for (int i = 0; i < 5; i++) {
             inputDateTime = inputDateTime.offsetNew(DateField.MONTH, 1);
@@ -62,12 +57,7 @@ public class Test04 {
         }
 
         Map<Integer, Integer> sortByValue = MapUtil.sortByValue(map, true);
-        sortByValue.forEach(new BiConsumer<Integer, Integer>() {
-            @Override
-            public void accept(Integer integer, Integer integer2) {
-                System.out.println(integer + "月" + integer2 + "天");
-            }
-        });
+        sortByValue.forEach((integer, integer2) -> System.out.println(integer + "月" + integer2 + "天"));
 
         Set<Integer> integers = sortByValue.keySet();
         Object[] array = integers.toArray();
@@ -79,31 +69,20 @@ public class Test04 {
                 System.out.print(array[i] + "月  ");
             }
         }
-
     }
 
     public static int getFreeDayCount(DateTime inputDateTime, DateTime theFirstFreeDay) {
-
         int freeDayCount = 0;
-
         int between = (int) inputDateTime.between(theFirstFreeDay, DateUnit.DAY);
-
         String[] dayEnum = new String[]{"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
-
         int workDayCount = 0;
-
         DateTime currentTime = theFirstFreeDay;
-
         int lastDayOfMonth = inputDateTime.getLastDayOfMonth() - 1;
-
         for (int i = 0; i < between + lastDayOfMonth; i++) {
             workDayCount++;
             currentTime = DateUtil.offsetDay(currentTime, 1);
-
             String dateStr = currentTime.toDateStr();
-
             int dayOfWeekNum = currentTime.dayOfWeek() - 1;
-
             if (currentTime.isWeekend()) {
                 workDayCount = 0;
                 if (currentTime.isAfterOrEquals(inputDateTime)) {

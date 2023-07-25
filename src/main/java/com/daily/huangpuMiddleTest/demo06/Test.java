@@ -35,17 +35,38 @@ public class Test {
 
         // 测试sort()方法
 
-        list.add(15);
-        list.add(98);
-        list.add(24);
-        list.add(24);
-        list.add(241);
-        list.add(242);
-        list.add(61);
-        list.add(16);
-        list.add(40);
-        list.sort((o1, o2) -> (o1 - o2));
-        //list.sort((o1, o2) -> (int) (o1 - o2));
-        list.forEach(System.out::println);
+//        list.add(15);
+//        list.add(98);
+//        list.add(24);
+//        list.add(24);
+//        list.add(241);
+//        list.add(242);
+//        list.add(61);
+//        list.add(16);
+//        list.add(40);
+//        list.sort((o1, o2) -> (o1 - o2));
+//        //list.sort((o1, o2) -> (int) (o1 - o2));
+//        list.forEach(System.out::println);
+
+
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+//        list.add(4);
+//        list.add(4);
+//        list.add(5);
+//        list.deleteDuplicate();
+//        list.forEach(s -> System.out.println(s));
+
+        XL<Double> doubleXL = new XL<>();
+        doubleXL.add(1.1);
+        doubleXL.add(1.2);
+        doubleXL.add(0.7);
+        doubleXL.add(0.65);
+        doubleXL.add(0.65);
+        doubleXL.add(-0.7);
+        doubleXL.add(1.3);
+        doubleXL.sort();
+        doubleXL.forEach();
     }
 }

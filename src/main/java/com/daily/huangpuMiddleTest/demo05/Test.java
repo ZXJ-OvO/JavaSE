@@ -16,6 +16,9 @@ public class Test {
         // 测试size()
         System.out.println();
         System.out.println(lists.size());
+        System.out.println(lists.get(5));
+
+
 
         // TODO: 2023/7/23 addAll
 

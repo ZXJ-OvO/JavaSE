@@ -19,7 +19,7 @@ public class TimeTask extends TimerTask {
 
     // 构造器，对闹钟的开始时间进行初始化
     public TimeTask() {
-        String s = "2023年07月23日 17:53:20";
+        String s = "2023年07月25日 11:00:00";
         // TODO: 2023/7/23
 
         DateTime currentDate = new DateTime(s, "yyyy年MM月dd日 HH:mm:ss");

@@ -8,22 +8,23 @@ import java.util.function.Consumer;
 
 public class MyArrayList<E> {
 
+    // 底层默认容量
     private static final int DEFAULT_CAPACITY = 10;
     private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
 
+    // 底层装元素的容器数组
     public Object[] elementData;
 
+    // 记录集合的元素个数
     private int size;
 
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 
     public int modCount = 0;
 
-
     public MyArrayList() {
         this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
     }
-
 
     public void forEach(Consumer<? super E> action) {
         Objects.requireNonNull(action);
@@ -37,6 +38,7 @@ public class MyArrayList<E> {
 
 
     public boolean add(E e) {
+
         int minCapacity = size + 1;
 
         if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {

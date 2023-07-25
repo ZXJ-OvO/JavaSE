@@ -1,12 +1,13 @@
 package com.daily.huangpuMiddleTest.demo06;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.function.Consumer;
 
 public class MyLinkedList<T> {
-    class Node<T> {
+
+    private static class Node<T> {
         T val;
         Node<T> next;
 
@@ -142,9 +143,11 @@ public class MyLinkedList<T> {
             throw new RuntimeException("链表为空");
         }
 
-        Set<T> seenElements = new HashSet<>();
+        HashSet<T> seenElements = new HashSet<>();
         Node<T> currentNode = first;
         Node<T> prevNode = null;
+
+        ArrayList<Integer> indexDuplicate = new ArrayList<>();
 
 
         if (size == 1) {
@@ -162,7 +165,14 @@ public class MyLinkedList<T> {
                     currentNode = currentNode.next;
                 }
             }
+            seenElements.clear();
         }
+
+        System.out.println(indexDuplicate.size());
+        for (int i = 0; i < indexDuplicate.size(); i++) {
+            deleteAtIndex(indexDuplicate.get(i));
+        }
+
     }
 
     public void forEach(Consumer<? super T> action) {
