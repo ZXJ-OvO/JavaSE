@@ -1,15 +1,10 @@
 package com.daily.huangpuMiddleTest.demo04;
 
-import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.map.MapUtil;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
  * 上三天，休息一天，周六日双休，然后顺延上三天班休息一天。该员工第一次休息日是2022-03-02日。
@@ -23,6 +18,7 @@ import java.util.Set;
  */
 public class Test04 {
     public static void main(String[] args) {
+        long l = System.currentTimeMillis();
         DateTime theFirstFreeDay = DateUtil.parseDate("2022-03-02");
         // 把输入的时间和第一次休假时间做成时间日期对象
         Scanner scanner = new Scanner(System.in);
@@ -42,33 +38,36 @@ public class Test04 {
             break;
         }
         getFreeDayCount(inputDateTime, theFirstFreeDay);
-        System.out.println("------------------------------------------");
-        HashMap<Integer, Integer> map = new HashMap<>();
-        inputDateTime = DateUtil.parseDate("2022-07-01");
-        for (int i = 0; i < 5; i++) {
-            inputDateTime = inputDateTime.offsetNew(DateField.MONTH, 1);
 
-            int free = getFreeDayCount(inputDateTime, theFirstFreeDay);
-            int work = inputDateTime.getLastDayOfMonth() - free;
-
-            map.put(7 + i, free);
-            System.out.println((7 + i) + "月休假：" + free + "天");
-            System.out.println((7 + i) + "月上班：" + work + "天");
-        }
-
-        Map<Integer, Integer> sortByValue = MapUtil.sortByValue(map, true);
-        sortByValue.forEach((integer, integer2) -> System.out.println(integer + "月" + integer2 + "天"));
-
-        Set<Integer> integers = sortByValue.keySet();
-        Object[] array = integers.toArray();
-
-        System.out.println("休假最多的月份：");
-
-        for (int i = 0; i < array.length; i++) {
-            if (sortByValue.get(array[i]) == sortByValue.get(array[0])) {
-                System.out.print(array[i] + "月  ");
-            }
-        }
+        long l1 = System.currentTimeMillis();
+        System.out.println(l1 - l);
+//        System.out.println("------------------------------------------");
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        inputDateTime = DateUtil.parseDate("2022-07-01");
+//        for (int i = 0; i < 5; i++) {
+//            inputDateTime = inputDateTime.offsetNew(DateField.MONTH, 1);
+//
+//            int free = getFreeDayCount(inputDateTime, theFirstFreeDay);
+//            int work = inputDateTime.getLastDayOfMonth() - free;
+//
+//            map.put(7 + i, free);
+//            System.out.println((7 + i) + "月休假：" + free + "天");
+//            System.out.println((7 + i) + "月上班：" + work + "天");
+//        }
+//
+//        Map<Integer, Integer> sortByValue = MapUtil.sortByValue(map, true);
+//        sortByValue.forEach((integer, integer2) -> System.out.println(integer + "月" + integer2 + "天"));
+//
+//        Set<Integer> integers = sortByValue.keySet();
+//        Object[] array = integers.toArray();
+//
+//        System.out.println("休假最多的月份：");
+//
+//        for (int i = 0; i < array.length; i++) {
+//            if (sortByValue.get(array[i]) == sortByValue.get(array[0])) {
+//                System.out.print(array[i] + "月  ");
+//            }
+//        }
     }
 
     public static int getFreeDayCount(DateTime inputDateTime, DateTime theFirstFreeDay) {
