@@ -1,6 +1,5 @@
 package com.zxj.day08;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /**
@@ -19,8 +18,8 @@ public class Question11 {
         System.out.println("请输入一个字符串（支持中文、字母、数字）：");
         String str = sc.nextLine();
         char[] charArray = str.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            System.out.print(charArray[i] + " ");
+        for (char value : charArray) {
+            System.out.print(value + " ");
         }
         System.out.println();
         int en = 0;
@@ -33,8 +32,8 @@ public class Question11 {
                 charArray[i] = (char) (charArray[i] + 32);
             }
         }
-        for (int i = 0; i < charArray.length; i++) {
-            System.out.print(charArray[i] + " ");
+        for (char c : charArray) {
+            System.out.print(c + " ");
         }
     }
 }

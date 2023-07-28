@@ -25,14 +25,14 @@ public class Question03 {
 
     public static int getScore(int[] arr) {
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int k : arr) {
+            sum += k;
         }
         int avg = sum / arr.length;
         System.out.println(avg);
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > avg ){
+        for (int j : arr) {
+            if (j > avg) {
                 count++;
             }
         }

@@ -12,7 +12,7 @@ public class Question13 {
     public static void main(String[] args) {
         int[] arr = {0, 1, 0, 3, 12};
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) if (arr[i] != 0) list.add(arr[i]);
+        for (int j : arr) if (j != 0) list.add(j);
         int[] newArr = new int[arr.length];
         for (int i = 0; i < list.size(); i++) newArr[i] = list.get(i);
 

@@ -1,5 +1,7 @@
 package com.daily.huangpuSETest.demo04;
 
+import lombok.Getter;
+
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +20,7 @@ public class RedEnvelopeRain {
     // 存放参与活动的员工
     public static ArrayList<Employee> employeesInvolved = new ArrayList<>();
     // 存放红包
-    public static ArrayList<Integer> redEnvelopeArrayList = new ArrayList<>();
+    public static final ArrayList<Integer> redEnvelopeArrayList = new ArrayList<>();
     // 存放单个红包对应的锁
     public static final Object[] redEnvelopeArrayListLocks = new Object[200];
     // 记录当前已经抢到的红包索引
@@ -43,15 +45,16 @@ public class RedEnvelopeRain {
         System.out.println("本次活动结束！请核对下方每人所抢的红包金额！\n");
 
         // 按照所抢红包的总金额进行降序排序展示
-        Collections.sort(employeesInvolved, (o1, o2) -> o2.getTotalMoney() - o1.getTotalMoney());
+        employeesInvolved.sort((o1, o2) -> o2.getTotalMoney() - o1.getTotalMoney());
         for (Employee employee : employeesInvolved)
-            System.out.println("员工" + employee.getEmpId() + "抢红包总计：" + employee.getTotalMoney() + "元");
+            System.out.println("员工" + employee.getEmpId() + " 抢红包总计：" + employee.getTotalMoney() + "元");
 
     }
 }
 
+@Getter
 class Employee extends Thread {
-    private int empId;
+    private final int empId;
     private int totalMoney;
 
     public Employee(int empId) {
@@ -84,13 +87,15 @@ class Employee extends Thread {
 
             totalMoney += envelope;
 
-            System.out.println("员工" + empId + "抢到红包：" + envelope + "元，当前总计：" + totalMoney + "元");
+            System.out.println("员工" + empId + " 抢到红包：" + envelope + "元，当前总计：" + totalMoney + "元");
 
-            try {
-                Thread.sleep(1000000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            // TODO: 2023/7/27  在循环中调用 'Thread.sleep()'，可能处于忙等待
+//            try {
+//                TimeUnit.SECONDS.sleep(10); // 休眠2秒
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+
 
 
             // 将已抢的红包从列表中删除
@@ -104,13 +109,6 @@ class Employee extends Thread {
         RedEnvelopeRain.employeesInvolved.add(this);
     }
 
-    public int getTotalMoney() {
-        return totalMoney;
-    }
-
-    public int getEmpId() {
-        return empId;
-    }
 }
 
 

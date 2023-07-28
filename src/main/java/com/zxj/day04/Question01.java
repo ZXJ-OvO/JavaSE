@@ -7,8 +7,8 @@ public class Question01 {
     public static void main(String[] args) {
         int[] array = {1616, 2626, 36, 6, 100};
         int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+        for (int j : array) {
+            sum += j;
         }
         System.out.println(sum);
     }

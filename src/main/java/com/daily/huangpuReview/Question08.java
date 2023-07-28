@@ -50,8 +50,8 @@ public class Question08 {
         Collections.reverse(characters);
 
         String reverseNumberString = "";
-        for (int i = 0; i < characters.size(); i++) {
-            reverseNumberString += characters.get(i);
+        for (Character character : characters) {
+            reverseNumberString += character;
         }
 
         Long reverseNumber = Long.parseLong(reverseNumberString);

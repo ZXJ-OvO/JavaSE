@@ -20,8 +20,8 @@ public class Question25 {
         List<Object> list = new ArrayList<>();
 
         String[] array = new String[2];
-        for (int i = 0; i < strings.length; i++) {
-            array = StrSplitter.splitToArray(strings[i], ".", 0, true, true);
+        for (String string : strings) {
+            array = StrSplitter.splitToArray(string, ".", 0, true, true);
             hashMap.put(array[0], array[1]);
             set.add(array[0]);
             list.add(array[1]);

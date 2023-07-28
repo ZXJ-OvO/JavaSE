@@ -33,9 +33,8 @@ public class Question01 {
         System.out.println(Arrays.toString(array));
 
         // 迭代器遍历集合
-        Iterator<String> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        for (String string : list) {
+            System.out.println(string);
         }
 
         // 增强for循环遍历集合
@@ -44,7 +43,7 @@ public class Question01 {
         }
 
         //Lambda表达式（forEach）遍历集合
-        list.forEach(new Consumer<String>() {
+        list.forEach(new Consumer<>() {
             @Override
             public void accept(String s) {
                 System.out.println(s);

@@ -33,8 +33,7 @@ public class Question14 {
         while (true) {
             Console.log("请输入账户名！：");
             String inputName = scanner.next();
-            for (int i = 0; i < students.size(); i++) {
-                Student student = students.get(i);
+            for (Student student : students) {
                 if (student.getName().equals(inputName)) {
                     Console.log("已经存在同名的账户，请重新输入");
                     continue OUT;

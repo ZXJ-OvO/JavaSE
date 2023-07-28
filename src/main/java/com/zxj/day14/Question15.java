@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -51,7 +50,6 @@ public class Question15 {
             }
             if (random >= 6 && random < 10) {
                 System.out.println("恭喜你抽中了" + awards.get(3).getName());
-                continue;
             }
         }
         long l1 = System.currentTimeMillis();

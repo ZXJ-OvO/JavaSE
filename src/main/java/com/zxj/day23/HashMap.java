@@ -4,8 +4,6 @@ package com.zxj.day23;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 
 public class HashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {

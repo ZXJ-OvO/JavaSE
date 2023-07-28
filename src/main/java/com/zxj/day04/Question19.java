@@ -12,8 +12,8 @@ public class Question19 {
         // 偶数个数
         int evenCount = 0;
         // 遍历数组，统计奇数和偶数个数
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0)
+        for (int item : arr) {
+            if (item % 2 == 0)
                 evenCount++;
             else
                 oddCount++;
@@ -27,20 +27,20 @@ public class Question19 {
         // 偶数数组下标
         int evenIndex = 0;
         // 遍历数组，将奇数和偶数分别放入奇数数组和偶数数组
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0)
-                evenArr[evenIndex++] = arr[i];
+        for (int value : arr) {
+            if (value % 2 == 0)
+                evenArr[evenIndex++] = value;
             else
-                oddArr[oddIndex++] = arr[i];
+                oddArr[oddIndex++] = value;
         }
         // 打印奇数数组
-        for (int i = 0; i < oddArr.length; i++) {
-            System.out.print(oddArr[i] + " ");
+        for (int k : oddArr) {
+            System.out.print(k + " ");
         }
         System.out.println();
         // 打印偶数数组
-        for (int i = 0; i < evenArr.length; i++) {
-            System.out.print(evenArr[i] + " ");
+        for (int j : evenArr) {
+            System.out.print(j + " ");
         }
     }
 }

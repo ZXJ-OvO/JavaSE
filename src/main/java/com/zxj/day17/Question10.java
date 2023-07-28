@@ -28,7 +28,7 @@ public class Question10 {
         File[] files = dir.listFiles();
 
         // 3、判断是否存在一级文件对象
-        if (files == null || files.length == 0) {
+        if (files == null) {
             return;
         }
 

@@ -26,8 +26,8 @@ public class Question07 {
         }
         Collections.reverse(arrayList);
         String result = "";
-        for (int i = 0; i < arrayList.size(); i++) {
-            result += arrayList.get(i);
+        for (Character character : arrayList) {
+            result += character;
         }
         if (result.equals(palindromicString)) {
             System.out.println(true);

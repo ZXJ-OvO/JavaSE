@@ -25,7 +25,7 @@ public class Question04 {
         File[] files = file.listFiles();
 
         // 拦截文件对象中的非法情况：不存在子文件、文件访问权限不足
-        if (files != null && files.length > 0) {
+        if (files != null) {
             // 遍历文件夹
             for (File f : files) {
                 // 判断是文件还是文件夹，文件夹需要递归遍历，文件需要判断

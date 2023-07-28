@@ -81,10 +81,7 @@ public class Question04 {
 
         // map加工方法（映射）：把流上的数据加工成新数据，注意此时可以操作源数据但是本质上stream流不会改变源数据
         System.out.println("--------------------------------------------------");
-        movies.stream().map(m -> {
-            m.setName("豆瓣：" + m.getName());
-            return m;
-        }).forEach(System.out::println);
+        movies.stream().peek(m -> m.setName("豆瓣：" + m.getName())).forEach(System.out::println);
 
         movies.forEach(m -> System.out.println(m));
 

@@ -16,7 +16,7 @@ public class Question05 {
         movies.add(new Movie1("阿甘正传", 7.5, "汤姆汉克斯"));
 
         // 1、forEach
-        movies.stream().forEach(System.out::println);
+        movies.forEach(System.out::println);
 
         // 2、count
         System.out.println(movies.stream().count());

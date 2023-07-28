@@ -22,9 +22,9 @@ public class Question03 {
 
     public static void getString(String[] strings) {
         System.out.println("字符串数组中长度小于3的元素有：");
-        for (int i = 0; i < strings.length; i++) {
-            if (strings[i].length() < 3 && !strings[i].contains(" ")) {
-                System.out.print(strings[i] + " \t");
+        for (String string : strings) {
+            if (string.length() < 3 && !string.contains(" ")) {
+                System.out.print(string + " \t");
             }
         }
     }

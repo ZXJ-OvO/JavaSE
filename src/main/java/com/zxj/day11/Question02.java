@@ -83,18 +83,18 @@ class StudentInfoSystemImpl implements StudentInfoSystem {
         double min = students.get(0).getScore();
         double score = 0;
 
-        for (int i = 0; i < students.size(); i++) {
+        for (Student student : students) {
 
-            score += students.get(i).getScore();
+            score += student.getScore();
 
-            if (students.get(i).getScore() < min) {
-                min = students.get(i).getScore();
+            if (student.getScore() < min) {
+                min = student.getScore();
 
             }
             System.out.println("最低分为：" + min);
 
-            if (students.get(i).getScore() > max) {
-                max = students.get(i).getScore();
+            if (student.getScore() > max) {
+                max = student.getScore();
             }
             System.out.println("最高分为：" + max);
         }

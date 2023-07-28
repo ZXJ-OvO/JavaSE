@@ -17,8 +17,8 @@ public class Question02 {
             arr[i] = rnd.nextInt(100) + 1;
         }
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int j : arr) {
+            sum += j;
         }
         System.out.println("数组的平均值为：" + sum / arr.length);
     }

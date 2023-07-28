@@ -11,9 +11,9 @@ public class Question05 {
 
     public static int findMaxNumber(int[] array) {
         int max = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (max < array[i]) {
-                max = array[i];
+        for (int j : array) {
+            if (max < j) {
+                max = j;
             }
         }
         return max;

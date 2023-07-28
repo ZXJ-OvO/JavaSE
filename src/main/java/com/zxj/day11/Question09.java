@@ -57,8 +57,7 @@ class StudentDataImpl1 implements StudentData {
 
     @Override
     public void printAllStudent() {
-        for (int i = 0; i < students.size(); i++) {
-            Student2 s = students.get(i);
+        for (Student2 s : students) {
             System.out.println(s.getName() + " " + s.getSex() + " " + s.getScore());
         }
     }
@@ -66,8 +65,7 @@ class StudentDataImpl1 implements StudentData {
     @Override
     public void printAverageScore() {
         double sum = 0;
-        for (int i = 0; i < students.size(); i++) {
-            Student2 s = students.get(i);
+        for (Student2 s : students) {
             Double score = s.getScore();
             sum += score;
         }
@@ -86,8 +84,7 @@ class StudentDataImpl2 implements StudentData {
 
     @Override
     public void printAllStudent() {
-        for (int i = 0; i < students.size(); i++) {
-            Student2 s = students.get(i);
+        for (Student2 s : students) {
             System.out.println(s.getName() + " " + s.getSex() + " " + s.getScore());
         }
     }
@@ -96,8 +93,7 @@ class StudentDataImpl2 implements StudentData {
     public void printAverageScore() {
         int man = 0;
         int woman = 0;
-        for (int i = 0; i < students.size(); i++) {
-            Student2 s = students.get(i);
+        for (Student2 s : students) {
             char sex = s.getSex();
             if ('男' == sex) {
                 man++;
@@ -120,8 +116,8 @@ class StudentDataImpl2 implements StudentData {
         students.remove(0);
 
         int sum = 0;
-        for (int i = 0; i < students.size(); i++) {
-            sum += students.get(i).getScore();
+        for (Student2 student : students) {
+            sum += student.getScore();
         }
 
         System.out.println("男人人数：" + man);

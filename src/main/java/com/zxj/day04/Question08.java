@@ -8,8 +8,8 @@ public class Question08 {
     public static void main(String[] args) {
         Integer[] number = {100, 50, 90, 60, 80, 70};
         int sum = 0;
-        for (int i = 0; i < number.length; i++) {
-            sum += number[i];
+        for (Integer integer : number) {
+            sum += integer;
         }
         System.out.println("数组中的所有元素的和为：" + sum);
     }

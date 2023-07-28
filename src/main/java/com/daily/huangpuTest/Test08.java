@@ -62,8 +62,7 @@ public class Test08 {
     }
 
     private static Student getStudentById(String id, ArrayList<Student> students) {
-        for (int i = 0; i < students.size(); i++) {
-            Student s = students.get(i);
+        for (Student s : students) {
             if (s.getId().equals(id)) {
                 return s;
             }

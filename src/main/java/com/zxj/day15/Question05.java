@@ -49,7 +49,7 @@ public class Question05 {
 
         System.out.println("----------------------------------------TreeSet：基于红黑树  可排序、不重复、无索引");
         // 通过有参构造器实现Comparator接口，重写compare()方法，实现自定义排序  此时Student类也实现了Comparable接口，重写compareTo()方法  默认优先使用compareTo()方法即实现类的比较器
-        TreeSet<Student> treeSet = new TreeSet<>(new Comparator<Student>() {
+        TreeSet<Student> treeSet = new TreeSet<>(new Comparator<>() {
             @Override
             public int compare(Student o1, Student o2) {
                 return o1.getAge() - o2.getAge();

@@ -95,9 +95,9 @@ class ATM {
         System.out.println("请输入您的账号：");
         String cardNumber = sc.nextLine();
         Account account = null;
-        for (int i = 0; i < accounts.size(); i++) {
-            if (cardNumber.equals(accounts.get(i).getCardNumber())) {
-                account = accounts.get(i);
+        for (Account value : accounts) {
+            if (cardNumber.equals(value.getCardNumber())) {
+                account = value;
             }
         }
         if (!cardNumber.equals(account.getCardNumber())) {

@@ -17,16 +17,16 @@ public class Question10 {
         System.out.println("请输入一个字符串（支持中文、字母、数字）：");
         String str = sc.nextLine();
         char[] charArray = str.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            System.out.print(charArray[i] + " ");
+        for (char value : charArray) {
+            System.out.print(value + " ");
         }
         int en = 0;
         int cn = 0;
         int num = 0;
-        for (int i = 0; i < charArray.length; i++) {
-            if ((65 <= charArray[i] && charArray[i] <= 90) || (97 <= charArray[i] && charArray[i] <= 122)) {
+        for (char c : charArray) {
+            if ((65 <= c && c <= 90) || (97 <= c && c <= 122)) {
                 en++;
-            } else if (48 <= charArray[i] && charArray[i] <= 57) {
+            } else if (48 <= c && c <= 57) {
                 num++;
             } else {
                 cn++;

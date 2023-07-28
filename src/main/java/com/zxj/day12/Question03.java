@@ -1,5 +1,7 @@
 package com.zxj.day12;
 
+import lombok.Getter;
+
 import java.util.Random;
 
 /**
@@ -36,6 +38,7 @@ public class Question03 {
 /*@Data
 @AllArgsConstructor
 @NoArgsConstructor*/
+@Getter
 class Animal {
     String name;
 
@@ -44,10 +47,6 @@ class Animal {
     }
 
     public Animal() {
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {

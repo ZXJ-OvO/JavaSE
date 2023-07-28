@@ -1,7 +1,10 @@
 package com.daily.huangpuMiddleTest.demo04;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 
+@Getter
 public class Day {
     private LocalDate today;
     private boolean flag; // false  true休息
@@ -22,16 +25,8 @@ public class Day {
         return weeks[today.getDayOfWeek().getValue() - 1];
     }
 
-    public LocalDate getToday() {
-        return today;
-    }
-
     public void setToday(LocalDate today) {
         this.today = today;
-    }
-
-    public boolean isFlag() {
-        return flag;
     }
 
     public void setFlag(boolean flag) {

@@ -11,14 +11,14 @@ public class Question03 {
         int max = score[0];
         int min = score[0];
         int sum = 0;
-        for (int i = 0; i < score.length; i++) {
-            if (score[i] > max) {
-                max = score[i];
+        for (int j : score) {
+            if (j > max) {
+                max = j;
             }
-            if (score[i] < min) {
-                min = score[i];
+            if (j < min) {
+                min = j;
             }
-            sum += score[i];
+            sum += j;
         }
         System.out.println("最高分：" + max);
         System.out.println("最低分：" + min);

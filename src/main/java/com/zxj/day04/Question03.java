@@ -7,8 +7,8 @@ public class Question03 {
     public static void main(String[] args) {
         double[] score = {99, 100, 62, 15, 48, 65, 98, 99, 5, 59.5, 75};
         int sum = 0;
-        for (int i = 0; i < score.length; i++) {
-            if(score[i] >= 60){
+        for (double v : score) {
+            if (v >= 60) {
                 sum++;
             }
         }

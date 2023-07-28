@@ -30,7 +30,7 @@ public class Question06 {
             }
         }
 
-        TreeSet<Student> treeSet = new TreeSet<>(new Comparator<Student>() {
+        TreeSet<Student> treeSet = new TreeSet<>(new Comparator<>() {
             @Override
             public int compare(Student o1, Student o2) {
                 return o1.getScore() - o2.getScore();

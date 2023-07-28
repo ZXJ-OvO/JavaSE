@@ -37,7 +37,7 @@ public class Question02 {
         System.out.println("排序后：");
         integers.forEach(System.out::println);
 
-        goods.sort(new Comparator<Goods>() {
+        goods.sort(new Comparator<>() {
             @Override
             public int compare(Goods o1, Goods o2) {
                 return (int) (o1.getPrice() - o2.getPrice());

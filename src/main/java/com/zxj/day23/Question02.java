@@ -33,7 +33,7 @@ public class Question02 {
 
 
         Integer i1 = 40;
-        Integer i2 = new Integer(40);
+        Integer i2 = 40;
         System.out.println(i1 == i2);        // false
         // Integer i1=40 会发生装箱，等价于Integer i1=Integer.valueOf(40) 因此，i1 直接使用的是缓存中的对象。而Integer i2 = new Integer(40) 会直接创建新的对象。
 

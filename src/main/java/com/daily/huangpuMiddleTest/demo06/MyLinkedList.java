@@ -98,7 +98,6 @@ public class MyLinkedList<T> {
         return currentNode.val;
     }
 
-    // TODO: 2023/7/23 思路：归并排序？修改泛型声明？排序方法泛型修改Comparator ？节点类的泛型声明修改为Comparable？
     public boolean sort(Comparator<? super T> comparator) {
         if (first == null) {
             throw new RuntimeException("链表为空");
@@ -123,14 +122,6 @@ public class MyLinkedList<T> {
                     swapped = true;
                 }
                 // 推进到下一个节点
-                /*
-                    使用冒泡排序，反复比较相邻的元素，并在它们的顺序不正确时交换它们的位置。
-                    每次遍历列表后，最大的元素会冒泡到正确的位置，即在列表的末尾
-                    为了优化排序算法并减少不必要的比较，引入了 lastSorted 变量。
-                    在每次遍历后，最后一个元素已经在它的正确位置上了
-                    所以在下一次遍历时，不需要再去比较和交换这个已经排好序的元素。
-                    通过设置 lastSorted 变量为当前节点来表示在这个节点之后的所有元素已经在正确的位置上了。
-                 */
                 current = current.next;
             }
             lastSorted = current; // 最后一个已排序节点，减少比较次数
@@ -169,8 +160,8 @@ public class MyLinkedList<T> {
         }
 
         System.out.println(indexDuplicate.size());
-        for (int i = 0; i < indexDuplicate.size(); i++) {
-            deleteAtIndex(indexDuplicate.get(i));
+        for (Integer integer : indexDuplicate) {
+            deleteAtIndex(integer);
         }
 
     }

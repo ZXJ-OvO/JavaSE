@@ -28,8 +28,8 @@ public class Question17 {
         for (int i = index; i < arr.length; i++) {
             newArr[i + 1] = arr[i];
         }
-        for (int i = 0; i < newArr.length; i++) {
-            System.out.print(newArr[i] + " ");
+        for (int j : newArr) {
+            System.out.print(j + " ");
         }
     }
 }

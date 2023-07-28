@@ -35,8 +35,8 @@ public class Question02 {
             }
         }
         System.out.print("去重后得到的数组：");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + "\t");
+        for (int value : arr) {
+            System.out.print(value + "\t");
         }
 
         // 2. 反转数组
@@ -46,16 +46,16 @@ public class Question02 {
             arr[i] = arr[i] ^ arr[arr.length - 1 - i];
         }
         System.out.print("\n反转后得到的数组：");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + "\t");
+        for (int k : arr) {
+            System.out.print(k + "\t");
         }
 
         // 3. 每行打印两个偶数元素
         System.out.println("\n数组中偶数元素有：");
         int lineCount = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                System.out.print(arr[i] + " ");
+        for (int j : arr) {
+            if (j % 2 == 0) {
+                System.out.print(j + " ");
                 lineCount++;
             }
             if (lineCount == 2) {

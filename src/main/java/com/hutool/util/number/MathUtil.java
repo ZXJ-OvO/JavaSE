@@ -1,7 +1,6 @@
 package com.hutool.util.number;
 
 import cn.hutool.core.math.Calculator;
-import com.customer.BigDecimalUtil;
 
 public class MathUtil {
     public static void main(String[] args) {

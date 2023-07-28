@@ -17,15 +17,11 @@ public class Question07 {
 }
 
 class Cat {
-    private String color;
-    private String breed;
 
     public Cat() {
     }
 
     public Cat(String color, String breed) {
-        this.color = color;
-        this.breed = breed;
     }
 
     public void eat() {
@@ -38,15 +34,11 @@ class Cat {
 }
 
 class Dog {
-    private String color;
-    private String breed;
 
     public Dog() {
     }
 
     public Dog(String color, String breed) {
-        this.color = color;
-        this.breed = breed;
     }
 
     public void eat() {

@@ -22,14 +22,14 @@ public class Question05 {
         }
         System.out.println("随机生成的数组为：");
         System.out.println(Arrays.toString(arr));
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
+        for (int j : arr) {
+            if (j % 2 == 0) {
                 countEven++;
-                even[countEven - 1] = arr[i];
+                even[countEven - 1] = j;
             }
-            if (arr[i] % 2 != 0) {
+            if (j % 2 != 0) {
                 countOdd++;
-                odd[countOdd - 1] = arr[i];
+                odd[countOdd - 1] = j;
             }
         }
         System.out.println("奇数数组为：");

@@ -22,8 +22,8 @@ public class Test03 {
             ints[i] = random.nextInt(13) + 15;
         }
 
-        for (int i = 0; i < ints.length; i++) {
-            list.add(ints[i]);
+        for (int anInt : ints) {
+            list.add(anInt);
         }
         Collections.shuffle(list);
         System.out.println(list);

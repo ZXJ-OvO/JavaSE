@@ -31,8 +31,8 @@ public class Question06 {
          */
         String[] arr = {"he", "llo", "world"};
         String s = "";
-        for (int i = 0; i < arr.length; i++) {
-            s += arr[i];
+        for (String value : arr) {
+            s += value;
         }
         System.out.println(s);
 

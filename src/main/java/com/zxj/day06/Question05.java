@@ -18,8 +18,8 @@ public class Question05 {
         }
         reverse(numbers);
         String data = "";
-        for (int i = 0; i < numbers.length; i++) {
-            data += numbers[i];
+        for (int j : numbers) {
+            data += j;
         }
         return data;
     }

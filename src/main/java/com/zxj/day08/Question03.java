@@ -16,14 +16,14 @@ public class Question03 {
             arr[i] = r.nextInt(100) + 1;
         }
         System.out.print("数组中的元素为：");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int k : arr) {
+            System.out.print(k + " ");
         }
         System.out.println();
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                System.out.print(arr[i] + " ");
+        for (int j : arr) {
+            if (j % 2 == 0) {
+                System.out.print(j + " ");
                 count++;
             }
 

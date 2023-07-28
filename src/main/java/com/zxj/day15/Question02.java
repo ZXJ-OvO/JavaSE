@@ -29,9 +29,8 @@ public class Question02 {
         movie1.setPrice(89.64);
         list.add(movie);
         list.add(movie1);
-        Iterator<Movie> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        for (Movie value : list) {
+            System.out.println(value);
         }
         list.forEach(s -> System.out.println(s));
         for (Movie s : list) {

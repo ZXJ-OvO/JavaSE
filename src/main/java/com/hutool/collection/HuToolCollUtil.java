@@ -2,7 +2,6 @@ package com.hutool.collection;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.collection.ListUtil;
-import cn.hutool.core.convert.Convert;
 import cn.hutool.core.lang.Filter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -77,7 +76,7 @@ public class HuToolCollUtil {
 
         // Collection集合过滤，返回过滤的集合，原集合元素不变
         ArrayList<String> newArrayList = CollUtil.newArrayList("a", "b", "c", "d", "a", "b", "c", "d");
-        Collection<String> list2 = CollUtil.filterNew(newArrayList, new Filter<String>() {
+        Collection<String> list2 = CollUtil.filterNew(newArrayList, new Filter<>() {
             @Override
             public boolean accept(String s) {
                 return s.equals("a") || s.equals("b");
@@ -92,7 +91,7 @@ public class HuToolCollUtil {
 
         // 去除Collection集合中的非指定元素，直接对原集合操作，然后返回原集合
         ArrayList<String> list3 = CollUtil.newArrayList("a", "b", "c", "d", "a", "b", "c", "d");
-        ArrayList<String> list4 = CollUtil.filter(list3, new Filter<String>() {
+        ArrayList<String> list4 = CollUtil.filter(list3, new Filter<>() {
             @Override
             public boolean accept(String s) {
                 // 返回false表示需要被过滤掉 返回true表示保留 直接在原集合上操作

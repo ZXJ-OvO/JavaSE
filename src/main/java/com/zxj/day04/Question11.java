@@ -31,9 +31,9 @@ public class Question11 {
         System.out.println("最小值为:" + min);
         System.out.println("最大值为:" + max);
         int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != min && array[i] != max) {
-                sum += array[i];
+        for (Integer integer : array) {
+            if (integer != min && integer != max) {
+                sum += integer;
             }
         }
         System.out.println("去掉最大值和最小值后的平均值为:" + sum / (array.length - 2));

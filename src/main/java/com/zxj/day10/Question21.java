@@ -81,7 +81,6 @@ class MasterCard extends BankCard {
         }
         if (usd > super.balance) {
             System.out.println("余额不足");
-            return;
         }
     }
 }

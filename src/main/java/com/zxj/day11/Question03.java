@@ -5,10 +5,10 @@ package com.zxj.day11;
  */
 public class Question03 {
     public static void main(String[] args) {
-        Audi smartAudi = new SmartAudi();
+        SmartAudi smartAudi = new SmartAudi();
         smartAudi.run();
-        ((SmartAudi) smartAudi).automaticDriving();
-        ((SmartAudi) smartAudi).automaticParking();
+        smartAudi.automaticDriving();
+        smartAudi.automaticParking();
 
     }
 }

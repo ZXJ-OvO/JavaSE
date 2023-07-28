@@ -55,8 +55,8 @@ class ATM {
         checkAccounts();
         System.out.print("请输入账户户号：");
         String idCard = scanner.next();
-        for (int i = 0; i < accounts.size(); i++) {
-            if (accounts.get(i).getCardId().equals(idCard)) {
+        for (Account account : accounts) {
+            if (account.getCardId().equals(idCard)) {
                 int status = 0;
                 while (true) {
                     System.out.print("请您输入密码：");
@@ -66,7 +66,7 @@ class ATM {
                             System.out.print("再次输入密码：");
                             String againPwd = scanner.next();
                             if (password.equals(againPwd)) {
-                                accounts.get(i).setPassword(password);
+                                account.setPassword(password);
                                 break;
                             }
 
@@ -179,9 +179,9 @@ class ATM {
                                 if (accounts.get(m).getCardId().equals(loginAccount.getCardId())) {
                                     accounts.get(m).setBalance(accounts.get(m).getBalance() - money);
                                     accounts.get(i).setBalance(accounts.get(i).getBalance() + money);
-                                    for (int k = 0; k < accounts.size(); k++) {
-                                        if (accounts.get(k).getCardId().equals(loginAccount.getCardId())) {
-                                            accounts.get(k).setBalance(accounts.get(k).getBalance() - money);
+                                    for (Account account : accounts) {
+                                        if (account.getCardId().equals(loginAccount.getCardId())) {
+                                            account.setBalance(account.getBalance() - money);
                                         }
                                     }
                                     break OUT;
@@ -201,8 +201,8 @@ class ATM {
     private void updatePassword() {
         System.out.print("请输入旧密码：");
         String oldPassword = scanner.next();
-        for (int i = 0; i < accounts.size(); i++) {
-            if (accounts.get(i).getCardId().equals(loginAccount.getCardId())) {
+        for (Account account : accounts) {
+            if (account.getCardId().equals(loginAccount.getCardId())) {
                 int status = 0;
                 while (true) {
                     System.out.print("请您输入新密码：");
@@ -212,7 +212,7 @@ class ATM {
                             System.out.print("再次输入密码：");
                             String againPwd = scanner.next();
                             if (password.equals(againPwd)) {
-                                accounts.get(i).setPassword(password);
+                                account.setPassword(password);
                                 break;
                             }
 
@@ -267,15 +267,15 @@ class ATM {
         while (true) {
             System.out.println("请输入取现金额，本系统仅接受100整纸钞且最低取款100元");
             int withDrawMoney = scanner.nextInt();
-            for (int i = 0; i < accounts.size(); i++) {
-                if (accounts.get(i).getCardId().equals(loginAccount.getCardId())) {
-                    if (accounts.get(i).getBalance() < withDrawMoney) {
+            for (Account account : accounts) {
+                if (account.getCardId().equals(loginAccount.getCardId())) {
+                    if (account.getBalance() < withDrawMoney) {
                         System.out.println("余额不足");
                         continue;
                     }
 
-                    if (accounts.get(i).getBalance() >= withDrawMoney) {
-                        accounts.get(i).setBalance(accounts.get(i).getBalance() - withDrawMoney);
+                    if (account.getBalance() >= withDrawMoney) {
+                        account.setBalance(account.getBalance() - withDrawMoney);
                         break OUT;
                     }
                 }
@@ -305,9 +305,9 @@ class ATM {
                     throw new RuntimeException(e);
                 }
                 System.out.print("您本次存款金额为：" + money);
-                for (int i = 0; i < accounts.size(); i++) {
-                    if (accounts.get(i).getCardId().equals(loginAccount.getCardId())) {
-                        accounts.get(i).setBalance(accounts.get(i).getBalance() + money);
+                for (Account account : accounts) {
+                    if (account.getCardId().equals(loginAccount.getCardId())) {
+                        account.setBalance(account.getBalance() + money);
                     }
                 }
                 break;
@@ -326,7 +326,6 @@ class ATM {
         System.out.println("性别：" + loginAccount.getGender());
         System.out.println("姓名：" + loginAccount.getUserName());
         System.out.println("今日最大取现额度" + loginAccount.getWithDraw());
-        return;
     }
 
     /**
@@ -366,8 +365,6 @@ class ATM {
             char gender = genderCharArray[0];
             switch (gender) {
                 case '男':
-                    account.setGender(gender);
-                    break OUT;
                 case '女':
                     account.setGender(gender);
                     break OUT;

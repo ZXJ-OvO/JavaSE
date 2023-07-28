@@ -32,13 +32,13 @@ public class Question14 {
         int a = -1;
         int b = -1;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
+        for (int k : arr) {
+            if (k % 2 == 0) {
                 a++;
-                even[a] = arr[i];
+                even[a] = k;
             } else {
                 b++;
-                odd[b] = arr[i];
+                odd[b] = k;
             }
         }
         // 奇数组、偶数组都拿到了
@@ -57,8 +57,8 @@ public class Question14 {
             }
             status = true;
         }
-        for (int i = 0; i < newArr.length; i++) {
-            System.out.println("newArr：" + newArr[i]);
+        for (int j : newArr) {
+            System.out.println("newArr：" + j);
         }
     }
 }

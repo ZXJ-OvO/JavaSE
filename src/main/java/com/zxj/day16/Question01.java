@@ -8,8 +8,8 @@ public class Question01 {
 
     public static void test(int... num) {
         int sum = 0;
-        for (int i = 0; i < num.length; i++) {
-            sum += num[i];
+        for (int j : num) {
+            sum += j;
         }
         System.out.println(sum);
     }

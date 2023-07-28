@@ -1,7 +1,5 @@
 package com.zxj.day18;
 
-import cn.hutool.core.lang.Console;
-
 import java.io.FileReader;
 
 public class Question20 {

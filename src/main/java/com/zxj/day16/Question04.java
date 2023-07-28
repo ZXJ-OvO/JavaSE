@@ -23,14 +23,14 @@ public class Question04 {
         int b = 0;
         int c = 0;
         int d = 0;
-        for (int i = 0; i < characters.length; i++) {
-            if (characters[i].equals('A')) {
+        for (Character character : characters) {
+            if (character.equals('A')) {
                 map.put("A", ++a);
-            } else if (characters[i].equals('B')) {
+            } else if (character.equals('B')) {
                 map.put("B", ++b);
-            } else if (characters[i].equals('C')) {
+            } else if (character.equals('C')) {
                 map.put("C", ++c);
-            } else if (characters[i].equals('D')) {
+            } else if (character.equals('D')) {
                 map.put("D", ++d);
             }
         }

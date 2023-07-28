@@ -1,5 +1,7 @@
 package com.zxj.day07;
 
+import lombok.Getter;
+
 /**
  * 定义手机类，手机有品牌(brand),价格(price)和颜色(color)三个属性，有打电话call()和sendMessage()两个功能。
  * 请定义出手机类，类中要有空参、有参构造方法，set/get方法。
@@ -18,6 +20,7 @@ public class Question04 {
 
 }
 
+@Getter
 class Phone {
     private String brand;
     private int price;
@@ -40,16 +43,8 @@ class Phone {
         System.out.println("发短信");
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
     public void setBrand(String brand) {
         this.brand = brand;
-    }
-
-    public int getPrice() {
-        return price;
     }
 
     public void setPrice(int price) {
@@ -58,10 +53,6 @@ class Phone {
         } else {
             this.price = price;
         }
-    }
-
-    public String getColor() {
-        return color;
     }
 
     public void setColor(String color) {

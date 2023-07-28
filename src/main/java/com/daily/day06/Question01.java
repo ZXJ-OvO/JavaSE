@@ -32,8 +32,8 @@ public class Question01 {
 
         int count = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > avg) count++;
+        for (int j : arr) {
+            if (j > avg) count++;
         }
 
         return count;

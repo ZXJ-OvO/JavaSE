@@ -23,12 +23,12 @@ public class Question06 {
         // 优化：使用Map集合，key存储工号，value存储随机数，随机数不重复
         Map<String, Integer> map = new HashMap<>();
         Random random = new Random();
-        for (int i = 0; i < array.length; i++) {
+        for (String s : array) {
             int num;
             do {
                 num = random.nextInt(5) + 1;
             } while (map.containsValue(num)); //containsValue()方法用于判断Map集合中是否包含指定的值
-            map.put(array[i], num);
+            map.put(s, num);
         }
         // 遍历Map集合
         for (Map.Entry<String, Integer> entry : map.entrySet()) {

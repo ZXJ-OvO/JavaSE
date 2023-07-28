@@ -38,7 +38,7 @@ public class Question10 {
         students.forEach(student -> System.out.println(student));
 
         // 2、使用匿名内部类，通过Collections.sort(T，new Comparator<T>)重写compare方法实现排序
-        Collections.sort(students, new Comparator<Student>() {
+        Collections.sort(students, new Comparator<>() {
             @Override
             public int compare(Student o1, Student o2) {
                 return o1.getScore() - o2.getScore();
@@ -47,7 +47,7 @@ public class Question10 {
         students.forEach(student -> System.out.println(student));
 
         // 3、使用匿名内部类，通过Arraylist自带的sort(new Comparator<T>())重写compare方法实现排序
-        students.sort(new Comparator<Student>() {
+        students.sort(new Comparator<>() {
             @Override
             public int compare(Student o1, Student o2) {
                 return o1.getScore() - o2.getScore();

@@ -7,8 +7,8 @@ public class Question05 {
     public static void main(String[] args) {
         int[] array = {10, 20, 30, 40, 50};
         System.out.println("反转前：");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + "\t");
+        for (int k : array) {
+            System.out.print(k + "\t");
         }
 
         int temp;
@@ -27,8 +27,8 @@ public class Question05 {
         }
 
         System.out.println("\n反转后：");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + "\t");
+        for (int j : array) {
+            System.out.print(j + "\t");
         }
     }
 }

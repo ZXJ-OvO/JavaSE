@@ -21,8 +21,8 @@ public class Question01 {
         System.out.println(Arrays.toString(arr));
 
         double avg = 0;
-        for (int i = 0; i < arr.length; i++) {
-            avg += arr[i];
+        for (int j : arr) {
+            avg += j;
         }
         System.out.println(avg / arr.length);
     }

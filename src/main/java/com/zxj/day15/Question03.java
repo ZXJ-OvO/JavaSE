@@ -22,8 +22,8 @@ public class Question03 {
         System.out.println(lists);
 
         // for循环遍历
-        for (int i = 0; i < lists.size(); i++) {
-            System.out.print(lists.get(i) + "\t");
+        for (String string : lists) {
+            System.out.print(string + "\t");
         }
 
         System.out.println();
@@ -35,9 +35,8 @@ public class Question03 {
 
         System.out.println();
         // 迭代器遍历
-        Iterator<String> iterator = lists.iterator();
-        while (iterator.hasNext()) {
-            System.out.print(iterator.next() + "\t");
+        for (String list : lists) {
+            System.out.print(list + "\t");
         }
 
         System.out.println();
