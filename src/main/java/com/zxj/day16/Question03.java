@@ -67,8 +67,6 @@ public class Question03 {
             }
         }
 
-
-        // todo 排序 3 4 5 6 7 8 9 10 J Q K A 2 boss Boss
         // 匹配所有花色并删除花色，然后根据点数排序，且大小王放在最后
         Collections.sort(person1, new PokerComparator());
         Collections.sort(person2, new PokerComparator());

@@ -3,7 +3,6 @@ package com.daily.huangpuSETest.demo02;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -108,7 +107,7 @@ class DestinationVote implements Comparable<DestinationVote> {
     private Long time;
 
     @Override
-    public int compareTo(@NotNull DestinationVote o) {
+    public int compareTo(DestinationVote o) {
         return this.time.compareTo(o.time);
     }
 }

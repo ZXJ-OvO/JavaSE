@@ -4,7 +4,6 @@ import cn.hutool.core.collection.CollUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.stream.Stream;
@@ -104,7 +103,7 @@ class Movie1 implements Comparable<Movie1> {
     private String actor;
 
     @Override
-    public int compareTo(@NotNull Movie1 o) {
+    public int compareTo(Movie1 o) {
         return Double.compare(this.getScore(), o.getScore());
     }
 }

@@ -4,7 +4,6 @@ import cn.hutool.core.collection.CollUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -31,7 +30,7 @@ class Student implements Comparable<Student> {
     private int score;
 
     @Override
-    public int compareTo(@NotNull Student o) {
+    public int compareTo(Student o) {
         return this.score - o.score;
     }
 }

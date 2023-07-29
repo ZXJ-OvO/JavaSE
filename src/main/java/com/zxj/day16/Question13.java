@@ -3,7 +3,6 @@ package com.zxj.day16;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 import java.util.TreeSet;
@@ -25,7 +24,7 @@ public class Question13 {
             private Double height;
 
             @Override
-            public int compareTo(@NotNull Dog o) {
+            public int compareTo(Dog o) {
                 if (Objects.equals(this.age, o.age)) {
                     return this.height.compareTo(o.height);
                 }

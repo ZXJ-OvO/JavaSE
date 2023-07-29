@@ -1,13 +1,12 @@
 
 package com.zxj.day23;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.*;
+import java.util.AbstractMap;
+import java.util.Map;
+import java.util.Set;
 
 
 public class HashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
-    @NotNull
     @Override
     public Set<Entry<K, V>> entrySet() {
         return null;
