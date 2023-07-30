@@ -14,7 +14,7 @@ package com.zxj.day01;
  */
 public class Question04 {
     public static void main(String[] args) {
-        int a = 10;
+        int a;
         {
             a = 20;
             System.out.println(a);
