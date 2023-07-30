@@ -17,12 +17,15 @@ public class Question04 {
         findFile(file, "Java API Crib Sheet.md");
     }
 
-    public static void findFile(File file, String fileName) throws IOException {
+    public static void findFile(File file, String fileName) {
         // 拦截非法情况：传入的file是空的，不存在的，不是文件夹的
         if (file == null || file.isFile() || !file.exists()) System.out.println("the file is invalid");
 
         // 拿到当前文件对象下的所有一级文件对象
-        File[] files = file.listFiles();
+        File[] files = new File[0];
+        if (file != null) {
+            files = file.listFiles();
+        }
 
         // 拦截文件对象中的非法情况：不存在子文件、文件访问权限不足
         if (files != null) {

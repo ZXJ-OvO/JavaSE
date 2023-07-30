@@ -7,10 +7,10 @@ import java.io.*;
  */
 public class Question28 {
     public static void main(String[] args) {
-        try (InputStream inputStream = new FileInputStream(new File("src/main/resources/test.txt"));
+        try (InputStream inputStream = new FileInputStream("src/main/resources/test.txt");
              InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-             FileOutputStream fileOutputStream = new FileOutputStream(new File("src/main/resources/test11.txt"));
-             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+             FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/test11.txt");
+             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream)
         ) {
 
             int read;

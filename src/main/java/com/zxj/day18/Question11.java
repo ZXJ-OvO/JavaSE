@@ -18,7 +18,7 @@ public class Question11 {
         System.out.println((char) read2);*/
 
         // 3. 循环读取
-        int read = 0;
+        int read;
         while ((read = fileInputStream.read()) != -1) {
             System.out.print((char) read);
         }

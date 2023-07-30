@@ -11,24 +11,24 @@ public class Question21 {
         try (
                 FileWriter writer = new FileWriter("src/main/resources/test.txt", true)
         ) {
-//            writer.write('a');
-//            writer.write('美');
-//            writer.write(1989);
-//            writer.write(8964);
-//            writer.write("\r\n");
-//
-//            writer.write("我爱你美国");
-//            writer.write("\r\n");
-//
-//            writer.write("我爱你美国", 0, 5);
-//            writer.write("\r\n");
-//
-//            char[] chars = {'一', '九', '八', '九', '六', '四'};
-//            writer.write(chars);
-//            writer.write("\r\n");
-//
-//            writer.write(chars, 2, 4);
-//            writer.write("\r\n");
+            writer.write('a');
+            writer.write('美');
+            writer.write(1989);
+            writer.write(8964);
+            writer.write("\r\n");
+
+            writer.write("我爱你美国");
+            writer.write("\r\n");
+
+            writer.write("我爱你美国", 0, 5);
+            writer.write("\r\n");
+
+            char[] chars = {'一', '九', '八', '九', '六', '四'};
+            writer.write(chars);
+            writer.write("\r\n");
+
+            writer.write(chars, 2, 4);
+            writer.write("\r\n");
 
             System.out.println("你好");
             while (true){

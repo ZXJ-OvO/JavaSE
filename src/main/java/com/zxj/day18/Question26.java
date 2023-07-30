@@ -54,7 +54,7 @@ public class Question26 {
                 }
             }
         } else {
-            try (InputStream in = new FileInputStream(source); OutputStream out = new FileOutputStream(target);) {
+            try (InputStream in = new FileInputStream(source); OutputStream out = new FileOutputStream(target)) {
 
                 byte[] buffer = new byte[1024 * 64];
                 int bytesRead;

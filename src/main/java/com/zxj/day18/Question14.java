@@ -13,7 +13,7 @@ public class Question14 {
         try (
                 // 建立管道
                 FileInputStream inputStream = new FileInputStream("src/main/resources/test.txt");
-                FileOutputStream outputStream = new FileOutputStream("src/main/resources/ss/test.txt", true);  // 需要手动填写目标地址文件而不是文件夹
+                FileOutputStream outputStream = new FileOutputStream("src/main/resources/ss/test.txt", true)  // 需要手动填写目标地址文件而不是文件夹
         ) {
             byte[] bytes = new byte[1024];   // 1kb
 

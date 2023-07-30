@@ -16,7 +16,7 @@ public class Question06 {
         System.out.println(Arrays.toString(files));
 
         File file1 = new File("src/main/resources/b.txt");
-        System.out.println(file1.listFiles()); // 当主调文件对象不是文件夹时，返回null
+        System.out.println(Arrays.toString(file1.listFiles())); // 当主调文件对象不是文件夹时，返回null
 
         // 当主调文件对象是一个没有权限访问的文件夹时，返回null
 

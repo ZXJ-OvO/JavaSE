@@ -14,7 +14,7 @@ public class Question30 {
              DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 
              FileInputStream fileInputStream = new FileInputStream("test1.txt");
-             DataInputStream dataInputStream = new DataInputStream(fileInputStream);
+             DataInputStream ignored = new DataInputStream(fileInputStream)
         ) {
             dataOutputStream.writeInt(1989);
             dataOutputStream.writeDouble(6.4);

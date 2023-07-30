@@ -56,7 +56,6 @@ public class Question05 {
         System.out.println("---------------------------------------------------------------------------");
 
         // 绝对路径
-        File file5 = new File("D:\\project\\java\\JavaSE\\JavaSE\\JavaSE\\src\\main\\java\\com\\zxj\\day18\\Question05.java");
 
         // 相对路径 以src为参照点
         File file6 = new File("src\\main\\resources\\a.txt");

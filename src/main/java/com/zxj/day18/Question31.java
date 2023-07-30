@@ -19,7 +19,6 @@ public class Question31 {
     }
 
     public static int test(int a, int b) {
-        int c = a / b;
-        return c;
+        return a / b;
     }
 }

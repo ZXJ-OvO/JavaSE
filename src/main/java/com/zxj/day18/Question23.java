@@ -16,7 +16,7 @@ public class Question23 {
              FileWriter fileWriter = new FileWriter("src/main/resources/test1.txt");
 
              BufferedReader bufferedReader = new BufferedReader(fileReader);
-             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);) {
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
 
             String line;
             ArrayList<String> list = new ArrayList<>();

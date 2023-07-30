@@ -13,9 +13,9 @@ public class Question29 {
     public static void main(String[] args) {
         try (
                 FileReader fileReader = new FileReader("src/main/resources/test.txt");
-                BufferedReader bufferedReader = new BufferedReader(fileReader);
+                BufferedReader ignored = new BufferedReader(fileReader);
                 FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/test11.txt", true);
-                PrintStream printStream = new PrintStream(fileOutputStream);) {
+                PrintStream printStream = new PrintStream(fileOutputStream)) {
             while (true) {
                 printStream.println(new Scanner(System.in).nextLine());
             }

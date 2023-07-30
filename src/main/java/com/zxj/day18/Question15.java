@@ -19,7 +19,7 @@ public class Question15 {
         System.out.println("拷贝完成");
     }
 
-    public static void copyFolder(File sourceAddress, File targetAddress) throws Exception {
+    public static void copyFolder(File sourceAddress, File targetAddress) {
         if (!sourceAddress.exists()) {
             System.out.println("源文件夹不存在");
             return;
@@ -47,7 +47,7 @@ public class Question15 {
     }
 
     public static void copyFile(File sourceFile, File targetFile) {
-        try (FileInputStream inputStream = new FileInputStream(sourceFile); FileOutputStream outputStream = new FileOutputStream(targetFile);) {
+        try (FileInputStream inputStream = new FileInputStream(sourceFile); FileOutputStream outputStream = new FileOutputStream(targetFile)) {
             byte[] buffer = new byte[1024];
             int len;
             while ((len = inputStream.read(buffer)) != -1) {
