@@ -2,11 +2,6 @@ package com.zxj.day03;
 
 /**
  * 有一个输出语句System.out.print("@")。使用这个语句，在控制台打印出一个五行的三角形，效果如下：
- * 	@
- * 	@@
- * 	@@@
- * 	@@@@
- * 	@@@@@
  */
 public class Question18 {
     public static void main(String[] args) {

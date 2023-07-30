@@ -19,5 +19,7 @@ public class Question11 {
             }
         }
         System.out.println("最小值为：" + min);
+
+        // Math.max();
     }
 }

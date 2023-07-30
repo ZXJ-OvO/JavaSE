@@ -1,5 +1,7 @@
 package com.zxj.day03;
 
+import java.util.Scanner;
+
 /**
  * 李雷想买一个价值7988元的新手机，她的旧手机在二手市场能卖1500元，
  * 而手机专卖店推出以旧换新的优惠，把她的旧手机交给店家，
@@ -7,14 +9,19 @@ package com.zxj.day03;
  */
 public class Question10 {
     public static void main(String[] args) {
-        int newPhone = 7988;
-        int oldPhone = 1500;
-        int discount = 8;
-        int newPhoneDiscount = newPhone * discount / 10;
-        if (newPhoneDiscount > oldPhone) {
-            System.out.println("以旧换新");
-        } else {
-            System.out.println("不以旧换新");
+        try (
+                Scanner scanner = new Scanner(System.in)
+        ) {
+            int newPhone = scanner.nextInt();
+            int oldPhone = scanner.nextInt();
+            int discount = 8;
+            int newPhoneDiscount = newPhone * discount / 10;
+            if (newPhoneDiscount > oldPhone) {
+                System.out.println("以旧换新");
+            } else {
+                System.out.println("不以旧换新");
+            }
         }
+
     }
 }

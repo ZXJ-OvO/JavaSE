@@ -13,6 +13,8 @@ public class Question04 {
         System.out.println("请输入右边界：");
         int b = in.nextInt();
         System.out.println("求和结果为：" + sum(a, b));
+
+        System.out.println(sumRecursion(5));
     }
 
     public static int sum(int a, int b) {
@@ -21,5 +23,13 @@ public class Question04 {
             sum += i;
         }
         return sum;
+    }
+
+    public static int sumRecursion(int num) {
+        if (num == 1) {
+            return 1;
+        }
+
+        return sumRecursion(num - 1) + num;
     }
 }

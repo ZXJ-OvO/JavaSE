@@ -21,7 +21,7 @@ public class Question15 {
         int num2 = sc.nextInt();
         System.out.println("请输入一种运算符号（+、-、*、/）：");
         int symbol = sc.next().charAt(0);
-        int result = 0;
+        int result;
         switch (symbol) {
             case '+':
                 result = num1 + num2;

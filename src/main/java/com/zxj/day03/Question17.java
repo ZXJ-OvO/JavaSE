@@ -1,11 +1,7 @@
 package com.zxj.day03;
 
 /**
- * 有一个输出语句System.out.print("@")。使用这个语句，在控制台打印出一个四行五列的长方形，效果如下：
- * @@@@@
- * @@@@@
- * @@@@@
- * @@@@@
+ * 有一个输出语句System.out.print("@")。使用这个语句，在控制台打印出一个四行五列的长方形
  */
 public class Question17 {
     public static void main(String[] args) {

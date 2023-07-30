@@ -6,13 +6,25 @@ package com.zxj.day03;
  */
 public class Question06 {
     public static void main(String[] args) {
-        System.out.println("该纸张折叠" + fold(8848860, 0.1) + "次，可以折成珠穆朗玛峰的高度");
+        System.out.println("该纸张折叠" + fold() + "次，可以折成珠穆朗玛峰的高度");
     }
 
-    private static int fold(int i, double v) {
+    private static int fold() {
         int count = 0;
-        while (v < i) {
+        int v = 1;
+        while (v < 8848860) {
             v *= 2;
+            count++;
+        }
+        return count;
+    }
+
+    public static int time(int initNumber) {
+        // 88488600
+        // 1
+        int count = 0;
+        while (initNumber < 88488600) {
+            initNumber *= 2;
             count++;
         }
         return count;
