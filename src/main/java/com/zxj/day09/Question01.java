@@ -30,7 +30,6 @@ class Account {
 class ATM {
     private static final Random random = new Random();
     private static final Date date = new Date();
-    private static final Thread thread = new Thread();
     private static List<Account> accounts = new ArrayList<>();
 
     public static void welcomePage() throws Exception {
@@ -39,7 +38,7 @@ class ATM {
         System.out.println("1、用户登录");
         System.out.println("2、用户开户");
         System.out.println("请选择您要操作的命令：");
-        thread.sleep(1000);
+        Thread.sleep(1000);
         String command = sc.nextLine();
 
         switch (command) {
@@ -47,7 +46,7 @@ class ATM {
                 userLogin(accounts);
                 break;
             case "2":
-                openAccount(random, date, accounts);
+                openAccount(accounts);
                 break;
             default:
                 System.out.println("命令输入错误，请重新输入！");
@@ -55,7 +54,7 @@ class ATM {
         }
     }
 
-    private static void openAccount(Random random, Date date, List<Account> accounts) throws Exception {
+    private static void openAccount(List<Account> accounts) throws Exception {
         Account account = new Account();
         Scanner sc = new Scanner(System.in);
         System.out.println("==========系统开户操作==========");
@@ -71,23 +70,23 @@ class ATM {
         System.out.println("请输入您的单次最大体现额度：");
         Double withdraw = sc.nextDouble();
         account.setWithdraw(withdraw);
-        String cardNumber = "";
+        StringBuilder cardNumber = new StringBuilder();
         for (int i = 0; i < 3; i++) {
-            cardNumber += random.nextInt(10);
+            cardNumber.append(ATM.random.nextInt(10));
         }
-        String time = String.valueOf(date.getTime());
-        cardNumber += time.substring(time.length() - 5);
+        String time = String.valueOf(ATM.date.getTime());
+        cardNumber.append(time.substring(time.length() - 5));
         System.out.println("开户成功！您的账号为：" + cardNumber);
-        account.setCardNumber(cardNumber);
+        account.setCardNumber(cardNumber.toString());
         accounts.add(account);
         System.out.println("\n==================================");
-        thread.sleep(1000);
+        Thread.sleep(1000);
         welcomePage();
     }
 
     private static void userLogin(List<Account> accounts) throws Exception {
         Scanner sc = new Scanner(System.in);
-        if (accounts == null || accounts.size() == 0) {
+        if (accounts == null || accounts.isEmpty()) {
             System.out.println("系统中没有账户，请先开户！");
             System.out.println("\n==================================");
         }
@@ -95,19 +94,15 @@ class ATM {
         System.out.println("请输入您的账号：");
         String cardNumber = sc.nextLine();
         Account account = null;
-        for (Account value : accounts) {
-            if (cardNumber.equals(value.getCardNumber())) {
-                account = value;
+        if (accounts != null) {
+            for (Account value : accounts) {
+                if (cardNumber.equals(value.getCardNumber())) {
+                    account = value;
+                }
             }
         }
-        if (!cardNumber.equals(account.getCardNumber())) {
-            System.out.println("账号输入错误");
-            System.out.println(account.toString());
-            System.out.println(accounts.toString());
-            userLogin(accounts);
-        }
         System.out.println("请输入您的密码：");
-        if (!sc.nextLine().equals(account.getPassword())) {
+        if (account != null && !sc.nextLine().equals(account.getPassword())) {
             System.out.println("密码输入错误");
         }
         System.out.println("\n==================================\n");
@@ -227,12 +222,12 @@ class ATM {
                 account.setBalance(account.getBalance() - money);
                 System.out.println("转账成功！您的账户余额为：" + account.getBalance());
                 System.out.println("本日剩余可取款额度为：" + (account.getWithdraw() - money));
-                thread.sleep(2000);
+                Thread.sleep(2000);
                 userMenu(account, accounts);
             }
         }
         System.out.println("转账失败！您输入的账号不存在！");
-        thread.sleep(2000);
+        Thread.sleep(2000);
         System.out.println("\n==================================");
         userMenu(account, accounts);
     }
@@ -254,7 +249,7 @@ class ATM {
         account.setBalance(account.getBalance() - money);
         System.out.println("取款成功！您的账户余额为：" + account.getBalance());
         System.out.println("本日剩余可取款额度为：" + (account.getWithdraw() - money));
-        thread.sleep(2000);
+        Thread.sleep(2000);
         System.out.println("\n==================================");
         userMenu(account, accounts);
     }
@@ -267,13 +262,12 @@ class ATM {
         Double money = sc.nextDouble();
         account.setBalance(account.getBalance() + money);
         System.out.println("存款成功！您的账户余额为：" + account.getBalance());
-        thread.sleep(2000);
+        Thread.sleep(2000);
         System.out.println("\n==================================");
         userMenu(account, accounts);
     }
 
     private static void query(Account account, List<Account> accounts) throws Exception {
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("==========查询操作==========");
         System.out.println("账户余额：" + account.getBalance());
@@ -282,7 +276,7 @@ class ATM {
         System.out.println("账号性别：" + account.getGender());
         System.out.println("取款额度：" + account.getWithdraw());
         System.out.println("账号密码：******");
-        thread.sleep(2000);
+        Thread.sleep(2000);
         System.out.println("\n==================================");
         userMenu(account, accounts);
     }
