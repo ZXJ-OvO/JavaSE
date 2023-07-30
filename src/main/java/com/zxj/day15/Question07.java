@@ -28,9 +28,9 @@ public class Question07 {
         students.add(new Student(2, "广州", "关羽"));
         students.add(new Student(3, "北京", "张飞"));
         students.add(new Student(4, "上海", "诸葛"));
-        System.out.println(students.toString());
+        System.out.println(students);
         // students.stream().filter(student -> student.getName().equals("张飞")).forEach(student -> student.setAddress("美国"));
         students.set(2, new Student(3, "美国", "张飞"));
-        System.out.println(students.toString());
+        System.out.println(students);
     }
 }

@@ -38,23 +38,18 @@ public class Question05 {
         hashSet.add(student2);
         hashSet.add(student3);
         // lombok重写了hashCode()和equals()方法，完全一样的两个对象student2和student3会被当成一个对象，达到去重的效果
-        hashSet.forEach(student -> System.out.println(student));
+        hashSet.forEach(System.out::println);
 
         System.out.println("----------------------------------------LinkedHashSet：基于哈希表，底层使用数组+链表+红黑树   有序、不重复、无索引");
         LinkedHashSet<Student> linkedHashSet = new LinkedHashSet<>();
         linkedHashSet.add(student1);
         linkedHashSet.add(student2);
         linkedHashSet.add(student3);
-        linkedHashSet.forEach(student -> System.out.println(student));
+        linkedHashSet.forEach(System.out::println);
 
         System.out.println("----------------------------------------TreeSet：基于红黑树  可排序、不重复、无索引");
         // 通过有参构造器实现Comparator接口，重写compare()方法，实现自定义排序  此时Student类也实现了Comparable接口，重写compareTo()方法  默认优先使用compareTo()方法即实现类的比较器
-        TreeSet<Student> treeSet = new TreeSet<>(new Comparator<>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.getAge() - o2.getAge();
-            }
-        });
+        TreeSet<Student> treeSet = new TreeSet<>(Comparator.comparingInt(Student::getAge));
         // TreeSet默认排序，对于对象无法直接排序，此时必须让类继承Comparable接口，重写compareTo()方法，才能添加到TreeSet中，而不是先添加再去使用匿名内部类comparator比较器
         treeSet.add(student1);
         treeSet.add(student2);
@@ -67,7 +62,7 @@ public class Question05 {
         treeSet.add(student5);
         treeSet.add(student6);
 
-        treeSet.forEach(student -> System.out.println(student));
+        treeSet.forEach(System.out::println);
 
         // 对于Collection集合的并发修改异常问题：使用迭代器Iterator的remove()方法删除元素可以避免
 

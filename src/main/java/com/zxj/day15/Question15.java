@@ -23,8 +23,6 @@ public class Question15 {
                 new Goods("苹果", 1100.99, 2),
                 new Goods("三星", 970.29, 1));
 
-        ArrayList<Goods> order = CollUtil.newArrayList(goods);
-
         goods.forEach(System.out::println);
 
     }

@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
 
 /**
  * 使用所学知识,完成"我的订单"业务需求
@@ -39,14 +38,9 @@ public class Question09 {
         list.sort((o1, o2) -> (int) (o1.getPrice() - o2.getPrice()));
 
         // forEach完整写法遍历list
-        list.forEach(new Consumer<>() {
-            @Override
-            public void accept(Goods goods) {
-                System.out.println(goods);
-            }
-        });
+        list.forEach(System.out::println);
 
-        list.forEach(goods -> System.out.println(goods));
+        list.forEach(System.out::println);
 
         list.forEach(System.out::println);
 

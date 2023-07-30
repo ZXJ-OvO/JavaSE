@@ -30,9 +30,7 @@ public class Question17 {
                 cardBox.add(color + number);
             }
         }
-        for (String king : kings) {
-            cardBox.add(king);
-        }
+        Collections.addAll(cardBox, kings);
 
         // 洗牌
         Collections.shuffle(cardBox);

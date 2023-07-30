@@ -2,7 +2,6 @@ package com.zxj.day15;
 
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * ArrayList底层基于数组：根据索引查询速度极快，删除引起元素位移导致效率低，添加导致数组扩容与元素位移使得效率极低

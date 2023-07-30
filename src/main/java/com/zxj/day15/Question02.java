@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 
 /**
  * 遍历集合中的三个电影对象，输出每部电影的详细信息
@@ -32,7 +31,7 @@ public class Question02 {
         for (Movie value : list) {
             System.out.println(value);
         }
-        list.forEach(s -> System.out.println(s));
+        list.forEach(System.out::println);
         for (Movie s : list) {
             System.out.println(s.toString());
         }

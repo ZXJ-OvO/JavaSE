@@ -30,23 +30,18 @@ public class Question06 {
             }
         }
 
-        TreeSet<Student> treeSet = new TreeSet<>(new Comparator<>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.getScore() - o2.getScore();
-            }
-        });
+        TreeSet<Student> treeSet = new TreeSet<>(Comparator.comparingInt(Student::getScore));
 
         treeSet.add(new Student(1, 99, "刘备"));
         treeSet.add(new Student(2, 85, "关羽"));
         treeSet.add(new Student(3, 90, "张飞"));
         treeSet.add(new Student(4, 75, "诸葛"));
 
-        treeSet.stream().sorted().forEach(student -> System.out.println(student));
+        treeSet.stream().sorted().forEach(System.out::println);
 
         System.out.println("淘汰分数最低的一名");
         treeSet.pollFirst(); // pollFirst()方法返回并删除第一个元素
-        treeSet.stream().sorted().forEach(student -> System.out.println(student));
+        treeSet.stream().sorted().forEach(System.out::println);
 
     }
 }

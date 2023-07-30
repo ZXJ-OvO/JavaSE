@@ -10,7 +10,7 @@ public class Question18 {
         System.out.println("请输入取钱金额：");
         Scanner scanner = new Scanner(System.in);
 
-        double v = 0.0;
+        double v;
         while (true) {
             try {
                 v = scanner.nextDouble();
