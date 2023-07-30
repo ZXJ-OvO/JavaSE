@@ -11,18 +11,19 @@ public class Question05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("a和尚身高：");
-        double a = sc.nextDouble();
+        int a = sc.nextInt();
         System.out.print("b和尚身高：");
-        double b = sc.nextDouble();
+        int b = sc.nextInt();
         System.out.print("c和尚身高：");
-        double c = sc.nextDouble();
+        int c = sc.nextInt();
 
-        Double[] array = new Double[]{a, b, c};
+        Integer[] array = new Integer[]{a, b, c};
         bubbleSort(array);
         System.out.println(array[2]);
     }
-    public static void bubbleSort(Double[] arr) {
-        double temp = 0;
+
+    public static void bubbleSort(Integer[] arr) {
+        int temp;
         for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {

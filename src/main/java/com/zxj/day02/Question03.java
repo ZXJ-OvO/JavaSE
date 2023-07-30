@@ -1,5 +1,7 @@
 package com.zxj.day02;
 
+import java.math.BigDecimal;
+
 /**
  * 某外卖商家的菜品单价如下:
  * 1.鱼香肉丝每份24元,油炸花生米每份8元,米饭每份3元。
@@ -15,7 +17,7 @@ public class Question03 {
 
     public static void pay(int a, int b, int c) {
         double money = 24 * a + 8 * b + 3 * c;
-        double v = money > 100 ? money * 0.9 : money;
+        double v = money > 100 ? BigDecimal.valueOf(money).multiply(BigDecimal.valueOf(0.9)).doubleValue() : money;
         System.out.println("总花费： " + v);
     }
 }

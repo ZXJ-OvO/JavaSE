@@ -14,7 +14,7 @@ public class Question02 {
         System.out.println("个位：" + a / 1000 % 10);
         System.out.println("十位：" + a / 100 % 10);
         System.out.println("百位：" + a / 10 % 10);
-        System.out.println("千位：" + a / 1 % 10);
+        System.out.println("千位：" + a % 10);
 
         Scanner s = new Scanner(System.in);
         System.out.print("请输入一个整数：");
