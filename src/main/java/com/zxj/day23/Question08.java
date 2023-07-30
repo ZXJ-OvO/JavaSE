@@ -1,37 +1,38 @@
 package com.zxj.day23;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
+
+import java.lang.annotation.*;
+import java.util.Arrays;
 
 /**
- * 获取ArrayList底层数组的真实长度，经过扩容后，可以使用trimToSize()方法将底层数组的长度缩减为真实长度。
- * 扩容机制：
- * 当添加第一个元素时，底层会创建一个长度为10的数组。
- * 当超过了10个元素时，底层会将原来的数组扩容为原来的1.5倍+1，同时将原有数组中的元素复制到新的数组中。
+ * 自定义注解可以用来标注：类、成员变量、成员方法、局部变量、参数
  */
+@info(value = "值")
 public class Question08 {
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 11; i++) {
-            list.add(i);
-        }
-
-        int capacity = getArrayListCapacity(list);
-        System.out.println("底层数组的容量: " + capacity);
-
-        list.trimToSize();
-        capacity = getArrayListCapacity(list);
-        System.out.println("底层数组的容量: " + capacity);
+    public static void main(String[] args) {
+        // 根据类对象获取类上的所有注解，返回注解数组
+        Class<Question08> aClass = Question08.class;
+        Annotation[] declaredAnnotations = aClass.getDeclaredAnnotations();
+        // declaredAnnotations
+        System.out.println(Arrays.toString(declaredAnnotations));
+        System.out.println(aClass.isAnnotationPresent(info.class));
 
     }
+}
 
-    /**
-     * 反射获取ArrayList底层数组的容量
-     */
-    public static int getArrayListCapacity(ArrayList<?> arrayList) throws NoSuchFieldException, IllegalAccessException {
-        Field field = ArrayList.class.getDeclaredField("elementData");
-        field.setAccessible(true);
-        Object[] elementData = (Object[]) field.get(arrayList);
-        return elementData.length;
-    }
+/**
+ * 自定义注解
+ */
+@Retention(value = RetentionPolicy.CLASS)
+@Target(value = ElementType.TYPE)
+@interface info {
+    // public String name() default "自定义注解";
+
+    public String value(); // 特殊属性
+
+    public String name() default "ZXJ";
+
+    public String Occupation() default "Java工程师";
+
+    public String mail() default "ZXJ-OvO@gmail.com";
 }
