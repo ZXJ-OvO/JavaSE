@@ -16,8 +16,4 @@ public class Question11 {
     }
 
 
-    public static void test1() {
-        System.out.println("==test1==");
-        test1(); // 直接递归：自己调用自己
-    }
 }

@@ -12,30 +12,21 @@ public class Question04 {
     public static void main(String[] args) {
         ArrayList<String> list = CollUtil.newArrayList("张无忌", "周芷若", "赵敏", "张强", "张三丰");
 
-        list.stream().filter(name -> name.startsWith("张") && name.length() == 3).forEach(name -> System.out.println(name));
+        list.stream().filter(name -> name.startsWith("张") && name.length() == 3).forEach(System.out::println);
 
         // 获取集合stream
-        Stream<String> stream = list.stream();
         System.out.println("------------------------------------------------");
 
         // 获取Map集合的Stream流的三种方式
-        HashMap<String, Integer> map = new HashMap<>();
 
         // 1、获取键流
-        Stream<String> keyS = map.keySet().stream();
 
         // 2、获取值流
-        Stream<Integer> values = map.values().stream();
 
         // 3、获取键值对流
-        Stream<Map.Entry<String, Integer>> entryStream = map.entrySet().stream();
         System.out.println("------------------------------------------------");
 
         // 获取数组的Stream
-        String[] names = {"赵敏", "王菲", "小昭"};
-        Stream<String> stream1 = Arrays.stream(names);
-        Stream<String> stream2 = Stream.of(names);
-        Stream<String> stream3 = Stream.of("张无忌", "周芷若", "赵敏", "张强", "张三丰");
 
 
         ArrayList<String> list1 = new ArrayList<>();
@@ -67,7 +58,7 @@ public class Question04 {
 
         // limit取前几个
         System.out.println("------------------------------------------------");
-        movies.stream().sorted((movie1, movie2) -> Double.compare(movie1.getScore(), movie2.getScore())).limit(2).forEach(System.out::println);
+        movies.stream().sorted(Comparator.comparingDouble(Movie1::getScore)).limit(2).forEach(System.out::println);
 
 
         System.out.println("------------------------------------------------");
@@ -82,7 +73,7 @@ public class Question04 {
         System.out.println("--------------------------------------------------");
         movies.stream().peek(m -> m.setName("豆瓣：" + m.getName())).forEach(System.out::println);
 
-        movies.forEach(m -> System.out.println(m));
+        movies.forEach(System.out::println);
 
         // 合并流
         Stream<String> s1 = Stream.of("张三", "李四", "王五");

@@ -14,33 +14,17 @@ import java.util.Scanner;
  */
 public class Question15 {
     public static void main(String[] args) {
-//        System.out.println("键盘录入一个新文件夹路径判断该路径是否存在：");
-//        String s = new Scanner(System.in).next();
-//        File file = new File(s);
-//        boolean exists = file.exists();
-//        if (!exists) file.mkdir();
-//
-//        System.out.println("键盘录入一个路径，并将该路径指向的文件或文件夹删除：");
-//        String s1 = new Scanner(System.in).next();
-//        File file1 = new File(s1);
-//        System.out.println(file1.delete());
-
-//        System.out.println("获得指定文件夹下所有的java文件(不考虑子文件夹的)并输出到控制台");
-//        File javaFile = new File("D:\\project\\java\\JavaSE\\JavaSE\\src\\main\\java\\com\\zxj\\day17");
-//        File[] files = javaFile.listFiles((dir, name) -> name.contains(".java"));
-//        System.out.println(Arrays.toString(files));
-//
-//        File file = new File("D:\\project\\java\\JavaSE\\JavaSE\\src\\main\\java\\com\\zxj\\day17\\MyLinkedList.java");
-//        System.out.println(file.length());
 
         System.out.println("\"键盘录入一个路径，将指定路径下的小于200K的小文件，并打印\"");
         Scanner scanner = new Scanner(System.in);
         String next = scanner.next();
         File file2 = new File(next);
         File[] files1 = file2.listFiles();
-        for (File file3 : files1) {
-            if (file3.length() < 200) {
-                System.out.println(file3.getName());
+        if (files1 != null) {
+            for (File file3 : files1) {
+                if (file3.length() < 200) {
+                    System.out.println(file3.getName());
+                }
             }
         }
     }

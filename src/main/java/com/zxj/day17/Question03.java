@@ -25,18 +25,14 @@ public class Question03 {
         ArrayList<HashMap<String, HashMap<String, Integer>>> cart = new ArrayList<>();
 
         System.out.println("***************购物车***************");
-        if (cart.size() == 0) {
-            System.out.println("购物车为空");
-            System.out.println("即将跳转到商品添加页面...");
-            Thread thread = new Thread();
-            for (int i = 3; i > 0; i--) {
-                thread.sleep(1000);
-                System.out.print(i + " ");
-            }
-            shopping(shop, goods, cart);
-        } else {
-            shopping(shop, goods, cart);
+        System.out.println("购物车为空");
+        System.out.println("即将跳转到商品添加页面...");
+
+        for (int i = 3; i > 0; i--) {
+            Thread.sleep(1000);
+            System.out.print(i + " ");
         }
+        shopping(shop, goods, cart);
 
         System.out.println("***************购物车***************");
         System.out.println("购物车中的商品如下:");

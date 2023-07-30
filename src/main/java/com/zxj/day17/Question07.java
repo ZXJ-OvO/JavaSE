@@ -20,7 +20,6 @@ public class Question07 {
 
         // 4、File对象的路径可以支持绝对路径，相对路径。
         // 什么是绝对路径？ 从磁盘的根路径开始一路寻找的路径。
-        File f4 = new File("E:\\resource\\aaa.png");
 
         // 什么是相对路径？ （重点）
         // 默认相对到当前工程下寻找文件的。

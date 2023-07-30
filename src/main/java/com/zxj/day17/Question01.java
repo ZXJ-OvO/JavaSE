@@ -11,7 +11,6 @@ public class Question01 {
     public static void main(String[] args) {
         System.out.println("输入end结束商品录入，输入任意其他字符开始录入");
         HashMap<String, Integer> hashMap = new HashMap<>();
-        Integer integer = 0;
         while (!(new Scanner(System.in).nextLine().equals("end"))) {
             System.out.println("请输入商品名称：");
             Scanner scanner = new Scanner(System.in);

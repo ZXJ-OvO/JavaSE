@@ -19,10 +19,11 @@ public class Question05 {
         movies.forEach(System.out::println);
 
         // 2、count
-        System.out.println(movies.stream().count());
+        System.out.println((long) movies.size());
 
         // 3、取最大值，前提是必须升序排序
-        Movie1 max = movies.stream().max((m1, m2) -> Double.compare(m1.getScore(), m2.getScore())).get();
+        //noinspection OptionalGetWithoutIsPresent
+        Movie1 max = movies.stream().max(Comparator.comparingDouble(Movie1::getScore)).get();
         System.out.println(max);
 
 
@@ -68,7 +69,7 @@ public class Question05 {
         Map<String, Double> result = movies1.stream()
                 .filter(m -> m.getScore() > 8.0)
                 .distinct()
-                .collect(Collectors.toMap(movie1 -> movie1.getName(), m -> m.getScore()));
+                .collect(Collectors.toMap(Movie1::getName, Movie1::getScore));
         System.out.println(result);
     }
 }
