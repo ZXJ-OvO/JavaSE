@@ -7,8 +7,6 @@ public class Question05 {
     public static void main(String[] args) {
         String a = "123321";
         String b = "3.14";
-        double c = 3.1415926;
-        int d = 123;
 
         double v = Double.parseDouble(b);
         System.out.println(v);
@@ -21,7 +19,6 @@ public class Question05 {
         System.out.println(integer);
 
         // 可以把基本类型的数据转化成字符串类型 怎么操作 ？？？
-        String s = String.valueOf(c);
 
     }
 }

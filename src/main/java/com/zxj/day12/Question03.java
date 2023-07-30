@@ -12,7 +12,7 @@ public class Question03 {
 
         // toString 返回字符串的表示形式
         Random random = new Random();
-        System.out.println(random.toString());
+        System.out.println(random);
 
         // equals 判断两个对象是否相等  lombok的注解默认是重写了equals与hashcode，调用原生的equals比较两个cat会false
         Animal animal = new Animal("cat");
@@ -44,9 +44,6 @@ class Animal {
 
     public Animal(String name) {
         this.name = name;
-    }
-
-    public Animal() {
     }
 
     public void setName(String name) {

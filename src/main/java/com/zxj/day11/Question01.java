@@ -12,27 +12,3 @@ public class Question01 {
     }
 }
 
-abstract class Employee {
-    public String name;
-    public int age;
-
-    public abstract void print();
-}
-
-class Teacher extends Employee {
-    public String skill;
-
-    @Override
-    public void print() {
-        System.out.println("姓名：" + name + "，年龄：" + age + "，技能：" + skill);
-    }
-}
-
-class Counsellor extends Employee {
-    public int answerCount;
-
-    @Override
-    public void print() {
-        System.out.println("姓名：" + name + "，年龄：" + age + "，回答问题的总人数：" + answerCount);
-    }
-}

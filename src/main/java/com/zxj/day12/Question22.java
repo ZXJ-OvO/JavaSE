@@ -4,19 +4,9 @@ public class Question22 {
     public static void main(String[] args) {
         A2 a1 = new A2();
 
-        a1.methodA(new InterA() {
-            @Override
-            public void showA() {
-                System.out.println("我是没有名字的InterA的实现类");
-            }
-        });
+        a1.methodA(() -> System.out.println("我是没有名字的InterA的实现类"));
 
-        a1.methodA(new InterA() {
-            @Override
-            public void showA() {
-                System.out.println("我有名字的InterA的实现类");
-            }
-        });
+        a1.methodA(() -> System.out.println("我有名字的InterA的实现类"));
 
     }
 }

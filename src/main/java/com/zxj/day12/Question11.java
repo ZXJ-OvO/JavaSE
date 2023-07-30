@@ -5,7 +5,7 @@ package com.zxj.day12;
  */
 public class Question11 {
     public static void main(String[] args) {
-        // 在此处补全代码
+        // 在此处不全代码
         /*
             内部类能直接访问外部类
             外部类不能直接访问内部类
@@ -13,14 +13,14 @@ public class Question11 {
             在根据外部类对象创建内部类对象
             格式:外部类类名.内部类类名 对象名 = new 外部类对象.new 内部类对象()
          */
-        Outer.Inner inner = new Outer().new Inner();
+        Outer.Inner inner = new Outer.Inner();
         inner.method();
     }
 }
 
 
 class Outer {
-    class Inner {
+    static class Inner {
         public void method() {
             int num = 30;
             System.out.println(num);

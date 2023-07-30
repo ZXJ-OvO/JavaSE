@@ -8,15 +8,10 @@ public class Question21 {
 }
 
 interface Inter {
-    void show();
 }
 
 class Outer1 {
     A a = new A() {
-        @Override
-        public void show() {
-            super.show();
-        }
     };
 }
 

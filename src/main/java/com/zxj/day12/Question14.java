@@ -3,7 +3,7 @@ package com.zxj.day12;
 
 public class Question14 {
     public static void main(String[] args) {
-        GeneratorSpecifyImpl<String[]> sgs = new GeneratorSpecifyImpl<>();
+        GeneratorSpecifyImpl sgs = new GeneratorSpecifyImpl();
         String[] strings = new String[10];
         sgs.printArray(strings);
         sgs.printArray("数组");
@@ -11,24 +11,11 @@ public class Question14 {
 }
 
 /**
- * 不指定类型-实现泛型类
- */
-class GeneratorNotSpecifiedImpl<T> implements Generator<T> {
-
-    @Override
-    public T method() {
-        return null;
-    }
-}
-
-/**
  * 指定类型-实现泛型类
  */
-class GeneratorSpecifyImpl<T> implements Generator<String> {
+class GeneratorSpecifyImpl implements Generator {
 
-    @Override
-    public String method() {
-        return "are you ok";
+    private void method() {
     }
 
     /**
@@ -43,6 +30,5 @@ class GeneratorSpecifyImpl<T> implements Generator<String> {
 /**
  * 自定义泛型类
  */
-interface Generator<T> {
-    T method();
+interface Generator {
 }

@@ -25,8 +25,8 @@ enum ChargeType {
     CHARGE_TYPE_FREE("10131002", "免费"),
     CHARGE_TYPE_MEMBER_RIGHTS("10131003", "会员权益");
 
-    private String code;
-    private String name;
+    private final String code;
+    private final String name;
 
     ChargeType(String code, String name) {
         this.code = code;

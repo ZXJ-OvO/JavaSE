@@ -8,14 +8,5 @@ public class Question02 {
 
     }
 
-    // 实现全局统一返回R？
-    public static Brand returnMsg() {
-        return Brand.ELASTICSEARCH;
-    }
-
-}
-
-enum Brand {
-    JAVA, SPRING, MYSQL, REDIS, ELASTICSEARCH;
 }
 

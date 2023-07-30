@@ -20,19 +20,15 @@ public class Question06 {
         // 在使用循环时，StringBuilder
         // append 任意类型
         stringBuilder.append("123");
-        String str1 = "he";
-        String str2 = "llo";
-        String str3 = "world";
-        String str4 = str1 + str2 + str3;
 
         /*
         使用+或者+=，这两个符号也是java唯二重载过的两个运算符
         底层实际上创建了StringBuilder的对象，调用了append方法，但是由于+或者+=发生在循环体内部，使得底层创建了等同于长度的StringBuioler的对象
          */
         String[] arr = {"he", "llo", "world"};
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (String value : arr) {
-            s += value;
+            s.append(value);
         }
         System.out.println(s);
 
