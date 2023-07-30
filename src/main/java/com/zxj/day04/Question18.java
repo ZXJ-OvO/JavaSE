@@ -9,7 +9,7 @@ package com.zxj.day04;
  */
 public class Question18 {
     public static void main(String[] args) {
-        double[] arr = {10.4, -3, -6.2, 1.2, -6.1, -19, -3.8, 0.9, -4.5, 5.5};
+        double[] arr = {10.4, -3, -6.2, 1.2, -3.8, 0.9, -4.5, 5.5};
         int win = 0;
         int lose = 0;
         for (double d : arr) {

@@ -25,9 +25,7 @@ public class Question17 {
             }
         }
         // 将后面的元素赋值给新数组
-        for (int i = index; i < arr.length; i++) {
-            newArr[i + 1] = arr[i];
-        }
+        System.arraycopy(arr, index, newArr, index + 1, arr.length - index);
         for (int j : newArr) {
             System.out.print(j + " ");
         }

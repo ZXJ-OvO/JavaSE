@@ -22,10 +22,6 @@ public class Question11 {
             }
             if (i == 0) {
                 max = array[i];
-            } else {
-                if (max < array[i]) {
-                    max = array[i];
-                }
             }
         }
         System.out.println("最小值为:" + min);

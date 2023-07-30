@@ -1,5 +1,7 @@
 package com.zxj.day04;
 
+import java.util.Arrays;
+
 /**
  * 创建一个长度为6的整数数组。
  * 请编写代码，随机生成六个0（包含）-100（不包含）之间的整数存放到数组中，
@@ -14,6 +16,7 @@ public class Question14 {
             arr[i] = num;
             sum += num;
         }
+        System.out.println(Arrays.toString(arr));
         System.out.println("数组中所有元素的和为：" + sum);
     }
 }

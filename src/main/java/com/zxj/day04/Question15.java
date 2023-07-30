@@ -12,7 +12,7 @@ public class Question15 {
         int[] arr = {2, 1, 3, 5, 4, 7};
         int sum = 0;
         for (int i = arr.length - 1; i >= 0; i--) {
-            sum += arr[arr.length - 1 - i] * Math.pow(10, i);
+            sum += (int) (arr[arr.length - 1 - i] * Math.pow(10, i));
         }
         System.out.println(sum);
     }
