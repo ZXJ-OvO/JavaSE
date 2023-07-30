@@ -13,8 +13,6 @@ public class Question15 {
         }
 
         System.out.println(timer.interval() / 1000.0);//花费毫秒数
-//        System.out.println(timer.intervalRestart());//返回花费时间，并重置开始时间
-//        System.out.println(timer.intervalMinute());//花费分钟数
 
     }
 }

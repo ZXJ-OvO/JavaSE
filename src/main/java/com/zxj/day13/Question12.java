@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -25,14 +26,6 @@ public class Question12 {
         list.add(goods1);
         list.add(goods2);
         list.add(goods3);
-        /*
-            list.sort(new Comparator<Goods>() {
-                @Override
-                public int compare(Goods o1, Goods o2) {
-                    return o1.getPrice() - o2.getPrice();
-                }
-            });
-        */
 
 
         System.out.println(list);
@@ -45,7 +38,7 @@ public class Question12 {
         list.add(goods);
 
         System.out.println(list);
-        list.sort((o1, o2) -> o1.getPrice() - o2.getPrice());
+        list.sort(Comparator.comparingInt(Goods::getPrice));
         System.out.println(list);
     }
 }

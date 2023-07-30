@@ -64,12 +64,11 @@ public class Question20 {
                 } else {
                     System.out.print("_\t");
                 }
-            } else if (i >= dayOfWeek) {
+            } else {
                 if (i % 3 == 0) {
                     DateTime offset = theFirstFreeDay.offset(DateField.DAY_OF_YEAR, 4);
                     freeDays.add(offset.toDateStr());
                     int field = offset.getField(DateField.DAY_OF_MONTH);
-                    int lastDayOfMonth = offset.getLastDayOfMonth();
                     System.out.print(field + "\t");
                     if (offset.isLastDayOfMonth()) {
                         System.out.println("\n");

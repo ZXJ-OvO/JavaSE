@@ -4,7 +4,7 @@ import cn.hutool.core.date.DateTime;
 
 /**
  * **需求**：
- * 某护士小花，作息规律为上二天班，休息一天，经常不确定休息日是否是周末（**注：首次休息日是2022年2月3日**）。
+ * 某护士小花，作息规律为上两天班，休息一天，经常不确定休息日是否是周末（**注：首次休息日是2022年2月3日**）。
  * **具体功能点的要求如下**
  * 1、请你开发一个程序，当小花输入年以及月后，立即显示出该月份的休息日详情。
  * 示范（注意：示范信息重点在于参考格式，结果不一定是准确的，请自行确保计算结果正确性）：
@@ -15,11 +15,11 @@ import cn.hutool.core.date.DateTime;
  */
 public class Question14 {
     public static void main(String[] args) {
-        showRestDay("2022", "2");
+        showRestDay();
 
     }
 
-    public static void showRestDay(String year, String month) {
+    public static void showRestDay() {
         DateTime dateTime = new DateTime();
         boolean weekend = dateTime.isWeekend();
         System.out.println(weekend);

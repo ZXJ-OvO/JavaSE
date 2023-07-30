@@ -8,11 +8,9 @@ import java.io.IOException;
 public class Question03 {
     public static void main(String[] args) throws IOException {
         // 设置堆内存大小为12 GB
-        long heapSize = 12L * 1024 * 1024 * 1024;
-        byte[] dummyArray = new byte[(int) heapSize];
 
         // 分配一个大型数组，占用内存
-        int[] largeArray = new int[1024 * 1024 * 100]; // 大约占用 400 MB 的内存
+        // 大约占用 400 MB 的内存
 
 // 返回Java虚拟机中的内存总量，以字节为单位
         long totalMemory = Runtime.getRuntime().totalMemory() / 1024 / 1024;
