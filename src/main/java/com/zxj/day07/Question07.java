@@ -6,10 +6,10 @@ package com.zxj.day07;
  */
 public class Question07 {
     public static void main(String[] args) {
-        Cat cat = new Cat("白色", "波斯猫");
+        Cat cat = new Cat();
         cat.eat();
         cat.catchMouse();
-        Dog dog = new Dog("黑色", "藏獒");
+        Dog dog = new Dog();
         dog.eat();
         dog.lookHome();
     }
@@ -19,9 +19,6 @@ public class Question07 {
 class Cat {
 
     public Cat() {
-    }
-
-    public Cat(String color, String breed) {
     }
 
     public void eat() {
@@ -36,9 +33,6 @@ class Cat {
 class Dog {
 
     public Dog() {
-    }
-
-    public Dog(String color, String breed) {
     }
 
     public void eat() {

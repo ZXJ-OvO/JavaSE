@@ -12,7 +12,7 @@ public class Question10 {
             int ge = i / 1000 % 10;
             int shi = i / 100 % 10;
             int bai = i / 10 % 10;
-            int qian = i / 1 % 10;
+            int qian = i % 10;
             int numLeft = ge + bai;
             int numRight = shi + qian;
             if (numLeft == numRight) {

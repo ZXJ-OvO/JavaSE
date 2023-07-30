@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Question02系统化
  */
 public class Question03 {
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("================电影票系统================");

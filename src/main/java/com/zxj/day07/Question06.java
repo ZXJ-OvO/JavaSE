@@ -15,13 +15,10 @@ public class Question06 {
 }
 
 class Manager {
-    private String name;
-    private String id;
-    private double salary;
-    private double bonus;
-
-    public Manager() {
-    }
+    private final String name;
+    private final String id;
+    private final double salary;
+    private final double bonus;
 
     public Manager(String name, String id, double salary, double bonus) {
         this.name = name;
@@ -36,12 +33,9 @@ class Manager {
 }
 
 class Coder {
-    private String name;
-    private String id;
-    private double salary;
-
-    public Coder() {
-    }
+    private final String name;
+    private final String id;
+    private final double salary;
 
     public Coder(String name, String id, double salary) {
         this.name = name;

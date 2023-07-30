@@ -5,7 +5,7 @@ import lombok.Data;
 
 /**
  * 展示系统中的全部电影(每部电影展示：名称、价格)。
- * 允许用户根据电影编号（id）查询出某个电影的详细信息
+ * 允许用户根据电影编号（id）查询出某部电影的详细信息
  */
 public class Question02 {
     public static void main(String[] args) {

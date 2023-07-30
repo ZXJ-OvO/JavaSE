@@ -14,20 +14,11 @@ import lombok.NoArgsConstructor;
 public class Question05 {
     public static void main(String[] args) {
         GirlFriend girlFriend = new GirlFriend("小红", 160, 50);
-        show(girlFriend);
-        wash(girlFriend);
-        cook(girlFriend);
+        System.out.println(girlFriend.getName() + girlFriend.getHeight() + "cm" + girlFriend.getWeight() + "kg");
+        System.out.println(girlFriend.getName() + "洗衣服");
+        System.out.println(girlFriend.getName() + "做饭");
     }
 
-    public static void show(GirlFriend girlFriend) {
-        System.out.println(girlFriend.getName()+girlFriend.getHeight()+ "cm" +girlFriend.getWeight()+ "kg");
-    }
-    public static void wash(GirlFriend girlFriend) {
-        System.out.println(girlFriend.getName()+"洗衣服");
-    }
-    public static void cook(GirlFriend girlFriend) {
-        System.out.println(girlFriend.getName()+"做饭");
-    }
 
 }
 
