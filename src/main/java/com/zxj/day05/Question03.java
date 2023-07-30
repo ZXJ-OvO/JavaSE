@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 输出一个int类型的数组内容，要求输出格式为：[11, 22, 33, 44, 55]
  */
 public class Question03 {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     private static int[] array;
 
     public static void main(String[] args) {
