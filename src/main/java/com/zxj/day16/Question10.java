@@ -34,26 +34,16 @@ public class Question10 {
         students.add(new Student("赵六", 60));
 
         // 1、使用类比较器通过Collections.sort(T, new T)排序
-        Collections.sort(students, new Student());
-        students.forEach(student -> System.out.println(student));
+        students.sort(new Student());
+        students.forEach(System.out::println);
 
         // 2、使用匿名内部类，通过Collections.sort(T，new Comparator<T>)重写compare方法实现排序
-        Collections.sort(students, new Comparator<>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.getScore() - o2.getScore();
-            }
-        });
-        students.forEach(student -> System.out.println(student));
+        students.sort(Comparator.comparingInt(Student::getScore));
+        students.forEach(System.out::println);
 
         // 3、使用匿名内部类，通过Arraylist自带的sort(new Comparator<T>())重写compare方法实现排序
-        students.sort(new Comparator<>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.getScore() - o2.getScore();
-            }
-        });
-        students.forEach(student -> System.out.println(student));
+        students.sort(Comparator.comparingInt(Student::getScore));
+        students.forEach(System.out::println);
 
 
         System.out.println("————————————————————————————————————类实现Comparable内部比较器");

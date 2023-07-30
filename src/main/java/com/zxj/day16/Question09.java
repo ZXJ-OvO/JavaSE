@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * list.add("赵敏";
  * list.add("张强";
  * list.add("张三丰");
- * 把集合中所有以“张”开头，且是3个字的元素存储到一个新的集合。
+ * 把集合中所有以“张”开头，且是3个字的元素存储到一个新地集合。
  */
 public class Question09 {
     public static void main(String[] args) {

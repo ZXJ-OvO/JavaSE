@@ -9,7 +9,7 @@ import java.util.*;
 public class Question04 {
     public static void main(String[] args) {
         Random random = new Random();
-        int num = 0;
+        int num;
         Character[] characters = new Character[80];
 
         for (int i = 0; i < 80; i++) {

@@ -10,7 +10,7 @@ import java.util.TreeSet;
 public class Question13 {
     public static void main(String[] args) {
         TreeSet<String> treeSet = new TreeSet<>();
-        treeSet.add("usa");
+        //treeSet.add("usa");
         treeSet.add("usd");
         treeSet.add("usa");
         System.out.println(treeSet);

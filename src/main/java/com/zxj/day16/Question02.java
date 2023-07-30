@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * Collections
@@ -37,12 +36,7 @@ public class Question02 {
         System.out.println("排序后：");
         integers.forEach(System.out::println);
 
-        goods.sort(new Comparator<>() {
-            @Override
-            public int compare(Goods o1, Goods o2) {
-                return (int) (o1.getPrice() - o2.getPrice());
-            }
-        });
+        goods.sort((o1, o2) -> (int) (o1.getPrice() - o2.getPrice()));
         System.out.println("按价格排序后：");
         goods.forEach(System.out::println);
 

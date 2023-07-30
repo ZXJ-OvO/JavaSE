@@ -52,7 +52,7 @@ public class Question03 {
 
         for (int i = 0; i < 17; i++) {
             int anInt = random.nextInt(pokerHeapArrayList.size() - 17);
-            if (person1.get(i).equals(pokerHeapArrayList.get(anInt))) {
+            if (person1.get(i).compareTo(pokerHeapArrayList.get(anInt)) == 0) {
                 i--;
             } else {
                 person2.add(pokerHeapArrayList.remove(anInt));
@@ -60,7 +60,7 @@ public class Question03 {
         }
         for (int i = 0; i < 17; i++) {
             int anInt = random.nextInt(pokerHeapArrayList.size() - 3);
-            if (person1.get(i).equals(pokerHeapArrayList.get(anInt)) || person2.get(i).equals(pokerHeapArrayList.get(anInt))) {
+            if ((person1.get(i).compareTo(pokerHeapArrayList.get(anInt)) == 0) || (person2.get(i).compareTo(pokerHeapArrayList.get(anInt)) == 0)) {
                 i--;
             } else {
                 person3.add(pokerHeapArrayList.remove(anInt));
@@ -68,9 +68,9 @@ public class Question03 {
         }
 
         // 匹配所有花色并删除花色，然后根据点数排序，且大小王放在最后
-        Collections.sort(person1, new PokerComparator());
-        Collections.sort(person2, new PokerComparator());
-        Collections.sort(person3, new PokerComparator());
+        person1.sort(new PokerComparator());
+        person2.sort(new PokerComparator());
+        person3.sort(new PokerComparator());
 
         // 看牌
         System.out.println("底牌：" + pokerHeapArrayList);

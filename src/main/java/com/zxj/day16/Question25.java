@@ -19,7 +19,7 @@ public class Question25 {
         Set<Object> set = new HashSet<>();
         List<Object> list = new ArrayList<>();
 
-        String[] array = new String[2];
+        String[] array;
         for (String string : strings) {
             array = StrSplitter.splitToArray(string, ".", 0, true, true);
             hashMap.put(array[0], array[1]);

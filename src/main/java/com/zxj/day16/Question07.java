@@ -19,8 +19,6 @@ public class Question07 {
         province.put("湖北省", city.get("湖北省"));
         province.put("河北省", city.get("河北省"));
 
-        province.forEach((k, v) -> {
-            System.out.println(k + " = " + v);
-        });
+        province.forEach((k, v) -> System.out.println(k + " = " + v));
     }
 }

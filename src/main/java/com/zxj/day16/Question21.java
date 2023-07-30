@@ -18,9 +18,7 @@ public class Question21 {
 
         categories.forEach((k, v) -> {
             System.out.println(k);
-            v.forEach((k1, v1) -> {
-                System.out.println("\t" + k1 + " " + v1);
-            });
+            v.forEach((k1, v1) -> System.out.println("\t" + k1 + " " + v1));
         });
 
     }

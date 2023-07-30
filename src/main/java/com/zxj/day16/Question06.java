@@ -36,12 +36,7 @@ public class Question06 {
         Students students2 = new Students("李四", 18);
         Students students3 = new Students("王五", 20);
 
-        TreeMap<Students, Integer> treeMap = new TreeMap<>(new Comparator<>() {
-            @Override
-            public int compare(Students o1, Students o2) {
-                return o1.getAge() - o2.getAge();
-            }
-        });
+        TreeMap<Students, Integer> treeMap = new TreeMap<>(Comparator.comparingInt(Students::getAge));
 
 
         treeMap.put(students1, students1.getAge());
