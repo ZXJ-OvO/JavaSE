@@ -32,8 +32,7 @@ public class Question15 {
                 new Awards("三等奖", 3, 3, 6),
                 new Awards("谢谢惠顾", 4, 6, 10));
 
-        ArrayList<Integer> list = CollUtil.newArrayList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-        int random = 0;
+        int random;
         for (int i = 0; i < 150; i++) {
             random = (int) (Math.random() * 10);
             if (random == 0) {

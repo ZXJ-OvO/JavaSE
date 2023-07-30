@@ -16,13 +16,13 @@ public class Question13 {
     private static final String OPTIONS_CAHS = "023456789abcdefghjklmnopqrstuvwxyz";
 
     public static void main(String[] args) {
-        // 在等号的右边补全代码
+        // 在等号的右边不全代码
         String verificationCode = verificationCode(() -> {
-            String code = "";
+            StringBuilder code = new StringBuilder();
             for (int i = 0; i < 4; i++) {
-                code += OPTIONS_CAHS.charAt((int) (Math.random() * OPTIONS_CAHS.length()));
+                code.append(OPTIONS_CAHS.charAt((int) (Math.random() * OPTIONS_CAHS.length())));
             }
-            return code;
+            return code.toString();
         });
 
         // 输出

@@ -13,9 +13,10 @@ public class Question01 {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int k = 0; k < arr.length - 1 - i; k++) {
                 if (arr[k] > arr[k + 1]) {
-                    arr[k] = arr[k] ^ arr[k + 1];
-                    arr[k + 1] = arr[k + 1] ^ arr[k];
-                    arr[k] = arr[k] ^ arr[k + 1];
+                    int i1 = arr[k] ^ arr[k + 1];
+                    arr[k] = i1;
+                    arr[k + 1] = i1;
+                    arr[k] = i1;
                 }
             }
         }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * 掌握Java中数组排序，以及理解其在实际开发中的应用
- * 某学校要组织学生参加活动，要求学生按照身高从小打大进行排队。请在素材的sort项目中的Entry类中补全相关的代码，模拟排队效果！程序运行效果如下所示：
+ * 某学校要组织学生参加活动，要求学生按照身高从小打大进行排队。请在素材的sort项目中的Entry类中不全相关的代码，模拟排队效果！程序运行效果如下所示：
  */
 public class Question12 {
     public static void main(String[] args) {
