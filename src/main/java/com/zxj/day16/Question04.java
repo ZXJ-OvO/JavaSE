@@ -18,6 +18,13 @@ public class Question04 {
         }
         System.out.println(Arrays.toString(characters));
         System.out.println(characters.length);
+        Set<Map.Entry<String, Integer>> entries = getEntries(characters);
+        for (Map.Entry<String, Integer> entry : entries) {
+            System.out.print("地点" + entry.getKey() + " 人数：" + entry.getValue() + "\n");
+        }
+    }
+
+    private static Set<Map.Entry<String, Integer>> getEntries(Character[] characters) {
         HashMap<String, Integer> map = new HashMap<>();
         int a = 0;
         int b = 0;
@@ -36,8 +43,6 @@ public class Question04 {
         }
 
         Set<Map.Entry<String, Integer>> entries = map.entrySet();
-        for (Map.Entry<String, Integer> entry : entries) {
-            System.out.print("地点" + entry.getKey() + " 人数：" + entry.getValue() + "\n");
-        }
+        return entries;
     }
 }
