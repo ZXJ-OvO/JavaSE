@@ -11,7 +11,7 @@ import java.util.Random;
  */
 public class Question02 {
     public static void main(String[] args) {
-        int arr [] = new int[5];
+        int[] arr = new int[5];
         Random rnd = new Random();
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rnd.nextInt(100) + 1;

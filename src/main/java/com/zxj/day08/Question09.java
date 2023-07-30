@@ -13,17 +13,13 @@ public class Question09 {
 
     public static boolean equals(String str) {
         // 方法有很多，反转后比较元素是最简单的
-        String newStr = "";
+        StringBuilder newStr = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {
-            newStr += str.charAt(i);
+            newStr.append(str.charAt(i));
         }
         System.out.println(newStr);
 
-        if (newStr.equals(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return newStr.toString().equals(str);
 
     }
 }

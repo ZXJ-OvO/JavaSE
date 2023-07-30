@@ -22,8 +22,6 @@ public class Question11 {
             System.out.print(value + " ");
         }
         System.out.println();
-        int en = 0;
-        int num = 0;
         // 通过ASCII可以知道A-a的差值是32，所以可以通过加减32来实现大小写转换
         for (int i = 0; i < charArray.length; i++) {
             if (97 <= charArray[i] && charArray[i] <= 122) {
