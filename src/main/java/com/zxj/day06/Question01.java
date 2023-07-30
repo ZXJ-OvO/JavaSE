@@ -1,5 +1,7 @@
 package com.zxj.day06;
 
+import java.util.Scanner;
+
 /**
  *用户购买机票时，机票原价会按照淡季、旺季，头等舱还是经济舱的情况进行相应的优惠，优惠方案如下：
  * 5-10月为旺季，头等舱9折，经济舱8.5折；
@@ -9,8 +11,8 @@ package com.zxj.day06;
 public class Question01 {
     public static void main(String[] args) {
         double price = 1000;
-        int month = 5;
-        String type = "头等舱";
+        int month = new Scanner(System.in).nextInt();
+        String type = new Scanner(System.in).next();
         double discount = 1;
         if (month >= 5 && month <= 10) {
             if (type.equals("头等舱")) {
@@ -18,7 +20,7 @@ public class Question01 {
             } else if (type.equals("经济舱")) {
                 discount = 0.85;
             }
-        } else if (month >= 11 || month <= 4) {
+        } else {
             if (type.equals("头等舱")) {
                 discount = 0.7;
             } else if (type.equals("经济舱")) {

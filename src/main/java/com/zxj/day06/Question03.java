@@ -12,9 +12,6 @@ public class Question03 {
         int min = score[0];
         int sum = 0;
         for (int j : score) {
-            if (j > max) {
-                max = j;
-            }
             if (j < min) {
                 min = j;
             }

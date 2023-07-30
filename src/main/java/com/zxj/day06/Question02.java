@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class Question02 {
     public static void main(String[] args) {
         String str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String code = "";
+        StringBuilder code = new StringBuilder();
         int nextInt = new Scanner(System.in).nextInt();
         for (int i = 0; i < nextInt; i++) {
             int index = (int) (Math.random() * str.length());
-            code += str.charAt(index); //catAt()返回指定索引处的char值
+            code.append(str.charAt(index)); //catAt()返回指定索引处的char值
         }
         System.out.println(code);
     }

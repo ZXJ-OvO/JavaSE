@@ -17,11 +17,11 @@ public class Question05 {
             numbers[i] = (numbers[i] + 5) % 10;
         }
         reverse(numbers);
-        String data = "";
+        StringBuilder data = new StringBuilder();
         for (int j : numbers) {
-            data += j;
+            data.append(j);
         }
-        return data;
+        return data.toString();
     }
 
     public static void reverse(int[] numbers) {

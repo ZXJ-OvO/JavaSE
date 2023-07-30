@@ -45,7 +45,7 @@ public class Question09 {
             }
         }
 
-        // 输入蓝球号码
+        // 输入蓝色球号码
         boolean isValid = false;
         while (!isValid) {
             System.out.print("请输入蓝球号码 (1-16)：");
@@ -81,7 +81,7 @@ public class Question09 {
     }
 
     /**
-     * 生成蓝球号码
+     * 生成蓝色球号码
      */
     public static int generateBlueBall() {
         return (int) (Math.random() * 16) + 1;
@@ -113,7 +113,7 @@ public class Question09 {
             }
         }
 
-        // 比较蓝球号码是否相同
+        // 比较蓝色球号码是否相同
         boolean isBlueMatch = (blueBall == luckyBlueBall);
 
         // 判断中奖等级
