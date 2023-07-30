@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 
 /**
  * 在传智播客有很多员工(Employee),按照工作内容不同分教研部员工(Teacher)和行政部员工(AdminStaff)
- * 教研部根据教学的方式不同又分为讲师(Lecturer)和助教(Tutor)
- * 行政部根据负责事项不同,有分为维护专员(Maintainer),采购专员(Buyer)
+ * 教研不根据教学的方式不同又分为讲师(Lecturer)和助教(Tutor)
+ * 行政不根据负责事项不同,有分为维护专员(Maintainer),采购专员(Buyer)
  * 公司的每一个员工都编号,姓名和其负责的工作
  * 工作内容:
  * 讲师: 工号为 666 的讲师 乔峰 在讲课

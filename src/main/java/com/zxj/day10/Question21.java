@@ -2,6 +2,7 @@ package com.zxj.day10;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -41,15 +42,16 @@ public class Question21 {
 
     public static String getCardId() {
         Random random = new Random();
-        String cardId = "";
+        StringBuilder cardId = new StringBuilder();
         for (int i = 0; i < 11; i++) {
-            cardId += random.nextInt(9);
+            cardId.append(random.nextInt(9));
         }
-        return cardId;
+        return cardId.toString();
     }
 }
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 class MasterCard extends BankCard {
 
@@ -60,7 +62,6 @@ class MasterCard extends BankCard {
         System.out.println("初始 银行卡 - 主卡 余额为：" + super.balance);
     }
 
-    @Override
     public void deposit(double usd) {
         super.balance += usd;
         System.out.println("用 主卡 存" + usd);
@@ -68,7 +69,6 @@ class MasterCard extends BankCard {
         System.out.println("存款成功，余额为：" + super.balance);
     }
 
-    @Override
     public void withDraw(double usd) {
         if (usd <= super.balance) {
             BigDecimal balance = new BigDecimal(super.balance);
@@ -79,12 +79,11 @@ class MasterCard extends BankCard {
             System.out.println("取款成功，余额为：" + subtract);
             return;
         }
-        if (usd > super.balance) {
-            System.out.println("余额不足");
-        }
+        System.out.println("余额不足");
     }
 }
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 class SecondaryCard extends BankCard {
     public Double overDraft;
@@ -100,7 +99,6 @@ class SecondaryCard extends BankCard {
         System.out.println("初始 银行卡 - 副卡 余额为：" + super.balance);
     }
 
-    @Override
     public void deposit(double usd) {
         super.balance += usd;
         System.out.println("用 副卡 存" + usd);
@@ -108,7 +106,6 @@ class SecondaryCard extends BankCard {
         System.out.println("存款成功，余额为：" + super.balance);
     }
 
-    @Override
     public void withDraw(double usd) {
         if (usd <= super.balance) {
             BigDecimal balance = new BigDecimal(super.balance);
@@ -119,10 +116,8 @@ class SecondaryCard extends BankCard {
             System.out.println("取款成功，余额为：" + subtract);
             return;
         }
-        if (usd > super.balance) {
-            System.out.println("余额不足");
-            overdraft(usd);
-        }
+        System.out.println("余额不足");
+        overdraft(usd);
     }
 
     public void overdraft(double usd) {
@@ -142,9 +137,4 @@ class BankCard {
     public String id;
     public String user;
 
-    public void deposit(double usd) {
-    }
-
-    public void withDraw(double usd) {
-    }
 }

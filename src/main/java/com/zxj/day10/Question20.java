@@ -38,10 +38,6 @@ class Lion extends Mammal {
         System.out.println(this.name + "看家");
     }
 
-    @Override
-    public void eat() {
-        System.out.println(this.name + "吃饭");
-    }
 }
 
 class Cat extends Mammal {
@@ -49,10 +45,6 @@ class Cat extends Mammal {
         System.out.println(this.name + "抓老鼠");
     }
 
-    @Override
-    public void eat() {
-        System.out.println(this.name + "吃饭");
-    }
 }
 
 @Data
@@ -63,7 +55,5 @@ class Mammal {
     public String color;
     public Double price;
 
-    public void eat() {
-    }
 }
 

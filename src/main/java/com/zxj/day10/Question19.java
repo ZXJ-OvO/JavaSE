@@ -2,6 +2,7 @@ package com.zxj.day10;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -21,7 +22,7 @@ import lombok.NoArgsConstructor;
 public class Question19 {
     public static void main(String[] args) {
         Programmer programmer = new Programmer("刘备", "002", 888.0);
-        Manager manager = new Manager(1000.0, "关羽", "001", 888.0);
+        Manager manager = new Manager("关羽", "001", 888.0);
 
         System.out.println(programmer);
         System.out.println(manager);
@@ -30,11 +31,9 @@ public class Question19 {
     }
 }
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 class Programmer extends Human {
-    public Programmer() {
-
-    }
 
     public Programmer(String name, String id, Double salary) {
         super.name = name;
@@ -43,15 +42,12 @@ class Programmer extends Human {
     }
 }
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 class Manager extends Human {
     private Double bonus;
 
-    public Manager() {
-
-    }
-
-    public Manager(Double bonus, String name, String id, Double salary) {
+    public Manager(String name, String id, Double salary) {
         super(name, id, salary);
     }
 }

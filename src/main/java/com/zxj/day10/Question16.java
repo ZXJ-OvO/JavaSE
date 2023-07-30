@@ -25,9 +25,6 @@ class AA {
 
     private int b;
 
-    private void print2() {
-
-    }
 }
 
 class BB extends AA {

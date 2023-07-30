@@ -34,8 +34,5 @@ class OldPhone {
 
 class NewPhone extends OldPhone {
 
-    private void play() {
-        System.out.println("打游戏");
-    }
 }
 

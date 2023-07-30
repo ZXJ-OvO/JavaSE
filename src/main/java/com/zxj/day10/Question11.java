@@ -19,14 +19,14 @@ class CustomerToolBox {
 
     public static String getVerificationCode() {
         String data = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        String code = "";
+        StringBuilder code = new StringBuilder();
 
         for (int i = 0; i < 4; i++) {
             int index = random.nextInt(data.length());
-            code += data.charAt(index);
+            code.append(data.charAt(index));
         }
 
-        return code;
+        return code.toString();
     }
     // 199 7269 1090
     // 124 5588 532

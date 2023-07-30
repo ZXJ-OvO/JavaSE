@@ -40,8 +40,7 @@ class StudentTest {
     }
 
     public String checkScore(double score) {
-        this.score = score;
-        String s = this.score >= 60 ? "及格" : "不及格";
-        return s;
+        StudentTest.score = score;
+        return StudentTest.score >= 60 ? "及格" : "不及格";
     }
 }

@@ -41,9 +41,10 @@ public class Question02 {
 
         // 2. 反转数组
         for (int i = 0; i < arr.length / 2; i++) {
-            arr[i] = arr[i] ^ arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = arr[arr.length - 1 - i] ^ arr[i];
-            arr[i] = arr[i] ^ arr[arr.length - 1 - i];
+            int i1 = arr[i] ^ arr[arr.length - 1 - i];
+            arr[i] = i1;
+            arr[arr.length - 1 - i] = i1;
+            arr[i] = i1;
         }
         System.out.print("\n反转后得到的数组：");
         for (int k : arr) {

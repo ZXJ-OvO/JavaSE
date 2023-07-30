@@ -16,7 +16,7 @@ public class Question08 {
         System.out.println(student1);
 
         // 不建议使用
-        student1.name = "static内存只有一份";
+        Student.name = "static内存只有一份";
     }
 }
 
