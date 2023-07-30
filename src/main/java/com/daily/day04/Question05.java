@@ -36,12 +36,8 @@ public class Question05 {
         System.out.println(Arrays.toString(odd));
         System.out.println("偶数数组为：");
         System.out.println(Arrays.toString(even));
-        for (int i = 0; i < countEven; i++) {
-            arr[i] = even[i];
-        }
-        for (int i = 0; i < countOdd; i++) {
-            arr[i] = odd[i];
-        }
+        if (countEven >= 0) System.arraycopy(even, 0, arr, 0, countEven);
+        if (countOdd >= 0) System.arraycopy(odd, 0, arr, 0, countOdd);
         System.out.println("奇偶数交换后的数组为：");
         System.out.println(Arrays.toString(arr));
 

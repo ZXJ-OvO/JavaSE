@@ -27,7 +27,7 @@ public class Question01 {
             sum += i;
         }
 
-        double avg = sum / arr.length;
+        double avg = (double) sum / arr.length;
         System.out.println(avg);
 
         int count = 0;

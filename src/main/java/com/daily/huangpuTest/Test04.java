@@ -20,13 +20,13 @@ public class Test04 {
 
         Random random = new Random();
 
-        String s = "";
+        StringBuilder s = new StringBuilder();
 
 
         for (int i = 0; i < 5; i++) {
 
-            s += code.charAt(random.nextInt(code.length()));
+            s.append(code.charAt(random.nextInt(code.length())));
         }
-        return s;
+        return s.toString();
     }
 }

@@ -12,7 +12,7 @@ public class Question01 {
         String str = scanner.nextLine();
         int upperCaseCount = 0;
         int lowerCaseCount = 0;
-        int numberCount = 0;
+        int numberCount;
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             if ('a' <= c && c <= 'z') {

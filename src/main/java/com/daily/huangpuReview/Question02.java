@@ -11,15 +11,10 @@ public class Question02 {
     public static void main(String[] args) {
         int[] nums = {41, 23, 23, 41};
         for (int i = 0; i < nums.length; i++) {
-            if (nums.length == 1) {
-                System.out.println(nums[0]);
-                return;
-            } else {
-                for (int j = i + 1; j < nums.length; j++) {
-                    if (nums[i] != nums[j]) {
-                        if (j == (nums.length - 1)) {
-                            System.out.println(nums[i]);
-                        }
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] != nums[j]) {
+                    if (j == (nums.length - 1)) {
+                        System.out.println(nums[i]);
                     }
                 }
             }

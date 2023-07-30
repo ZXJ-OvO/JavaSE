@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 
 /**
@@ -21,8 +18,8 @@ public class Question12 {
 }
 
 class ATM {
-    private ArrayList<Account> accounts = new ArrayList<>();
-    private Scanner scanner = new Scanner(System.in);
+    private final ArrayList<Account> accounts = new ArrayList<>();
+    private final Scanner scanner = new Scanner(System.in);
     private static Account loginAccount;
 
     /**
@@ -70,13 +67,11 @@ class ATM {
                                 break;
                             }
 
-                            if (!password.equals(againPwd)) {
-                                status++;
-                                System.out.println("密码输入错误。还剩" + (3 - status) + "次机会");
-                                if (status == 3) {
-                                    System.out.println("密码错误达到3次，请携带证件联系柜台取卡");
-                                    System.exit(1);
-                                }
+                            status++;
+                            System.out.println("密码输入错误。还剩" + (3 - status) + "次机会");
+                            if (status == 3) {
+                                System.out.println("密码错误达到3次，请携带证件联系柜台取卡");
+                                System.exit(1);
                             }
                         }
                         break;
@@ -156,9 +151,7 @@ class ATM {
             for (int i = 0; i < accounts.size(); i++) {
                 if (!accounts.get(i).getCardId().equals(targetCardId)) {
                     System.out.println("不存在该账户，请重新输入！");
-                    continue;
-                }
-                if (accounts.get(i).getCardId().equals(targetCardId)) {
+                }else {
                     String targetUserName = accounts.get(i).getUserName();
                     String substringName = targetUserName.substring(1);
                     String name = "*" + substringName;
@@ -169,23 +162,21 @@ class ATM {
                         System.out.println("姓名输入错误，请仔细确认！");
                         continue;
                     }
-                    if (inputName.equals(targetUserName)) {
-                        int money = 0;
-                        OUT:
-                        while (true) {
-                            System.out.print("请输入您要转账的金额：");
-                            money = scanner.nextInt();
-                            for (int m = 0; m < accounts.size(); m++) {
-                                if (accounts.get(m).getCardId().equals(loginAccount.getCardId())) {
-                                    accounts.get(m).setBalance(accounts.get(m).getBalance() - money);
-                                    accounts.get(i).setBalance(accounts.get(i).getBalance() + money);
-                                    for (Account account : accounts) {
-                                        if (account.getCardId().equals(loginAccount.getCardId())) {
-                                            account.setBalance(account.getBalance() - money);
-                                        }
+                    int money;
+                    OUT:
+                    while (true) {
+                        System.out.print("请输入您要转账的金额：");
+                        money = scanner.nextInt();
+                        for (int m = 0; m < accounts.size(); m++) {
+                            if (accounts.get(m).getCardId().equals(loginAccount.getCardId())) {
+                                accounts.get(m).setBalance(accounts.get(m).getBalance() - money);
+                                accounts.get(i).setBalance(accounts.get(i).getBalance() + money);
+                                for (Account account : accounts) {
+                                    if (account.getCardId().equals(loginAccount.getCardId())) {
+                                        account.setBalance(account.getBalance() - money);
                                     }
-                                    break OUT;
                                 }
+                                break OUT;
                             }
                         }
                     }
@@ -200,7 +191,6 @@ class ATM {
      */
     private void updatePassword() {
         System.out.print("请输入旧密码：");
-        String oldPassword = scanner.next();
         for (Account account : accounts) {
             if (account.getCardId().equals(loginAccount.getCardId())) {
                 int status = 0;
@@ -216,13 +206,11 @@ class ATM {
                                 break;
                             }
 
-                            if (!password.equals(againPwd)) {
-                                status++;
-                                System.out.println("密码输入错误。还剩" + (3 - status) + "次机会");
-                                if (status == 3) {
-                                    System.out.println("密码错误达到3次，请携带证件联系柜台取卡");
-                                    System.exit(1);
-                                }
+                            status++;
+                            System.out.println("密码输入错误。还剩" + (3 - status) + "次机会");
+                            if (status == 3) {
+                                System.out.println("密码错误达到3次，请携带证件联系柜台取卡");
+                                System.exit(1);
                             }
                         }
                         break;
@@ -248,10 +236,10 @@ class ATM {
 
         if ("yes".equals(cmd)) {
             System.out.println("请输入账户户号");
-            String cardId = scanner.next();
-            for (int i = 0; i < accounts.size(); i++) {
-                if (accounts.get(i).getCardId().equals(loginAccount.getCardId())) {
-                    accounts.remove(i);
+            Iterator<Account> iterator = accounts.iterator();
+            for (Account account : accounts) {
+                if (account.getCardId().equals(loginAccount.getCardId())) {
+                    iterator.remove();
                     System.out.println("销户操作执行成功！");
                     start();
                 }
@@ -297,13 +285,8 @@ class ATM {
                 continue;
             }
             if (money % 100 == 0) {
-                Thread thread = new Thread();
-                try {
-                    System.out.println("正在验钞中，请稍后...");
-                    thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+
+                System.out.println("正在验钞中，请稍后...");
                 System.out.print("您本次存款金额为：" + money);
                 for (Account account : accounts) {
                     if (account.getCardId().equals(loginAccount.getCardId())) {
@@ -333,14 +316,12 @@ class ATM {
      */
     private void checkAccounts() {
         while (true) {
-            if (accounts.size() == 0) {
+            if (accounts.isEmpty()) {
                 System.out.println("当前系统无账户，请先开户");
                 createAccount();
                 continue;
             }
-            if (accounts.size() > 0) {
-                return;
-            }
+            return;
         }
     }
 
@@ -387,13 +368,11 @@ class ATM {
                         break;
                     }
 
-                    if (!password.equals(againPwd)) {
-                        status++;
-                        System.out.println("密码输入错误。还剩" + (3 - status) + "次机会");
-                        if (status == 3) {
-                            System.out.println("密码错误达到3次，请携带证件联系柜台取卡");
-                            System.exit(1);
-                        }
+                    status++;
+                    System.out.println("密码输入错误。还剩" + (3 - status) + "次机会");
+                    if (status == 3) {
+                        System.out.println("密码错误达到3次，请携带证件联系柜台取卡");
+                        System.exit(1);
                     }
                 }
                 break;
@@ -415,14 +394,14 @@ class ATM {
         // 生成卡号 19位
         Date date = new Date();
         long time = date.getTime();
-        String idCard = time + "";
+        StringBuilder idCard = new StringBuilder(time + "");
         Random random = new Random();
         for (int i = 0; i < 6; i++) {
-            idCard += random.nextInt(9);
+            idCard.append(random.nextInt(9));
         }
         System.out.println("开户卡号：" + idCard);
 
-        account.setCardId(idCard);
+        account.setCardId(idCard.toString());
 
         accounts.add(account);
         loginAccount = account;

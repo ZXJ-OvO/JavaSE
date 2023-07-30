@@ -33,7 +33,7 @@ public class Question08 {
             long reverse = reverse(oppositeNumber);
             System.out.println(reverse * (-1));
 
-        } else if (inputNumber == 0) {
+        } else {
             System.out.println(0);
         }
     }
@@ -49,28 +49,28 @@ public class Question08 {
 
         Collections.reverse(characters);
 
-        String reverseNumberString = "";
+        StringBuilder reverseNumberString = new StringBuilder();
         for (Character character : characters) {
-            reverseNumberString += character;
+            reverseNumberString.append(character);
         }
 
-        Long reverseNumber = Long.parseLong(reverseNumberString);
+        Long reverseNumber = Long.parseLong(reverseNumberString.toString());
 
-        Long flag = checkBound(reverseNumber);
+        long flag = checkBound(reverseNumber);
 
         if (flag == 1) {
             return reverseNumber;
         } else if (flag == 0) {
-            return 0l;
+            return 0L;
         }
-        return 0l;
+        return 0L;
     }
 
     private static Long checkBound(Long toBeCheckedNumber) {
         if (toBeCheckedNumber > Integer.MAX_VALUE || toBeCheckedNumber < Integer.MIN_VALUE) {
-            return 0l;
+            return 0L;
         } else {
-            return 1l;
+            return 1L;
         }
     }
 

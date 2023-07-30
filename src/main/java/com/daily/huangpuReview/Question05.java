@@ -36,7 +36,7 @@ public class Question05 {
         } else if (dividend < 0 && divisor > 0) {
             dividend = dividend * (-1);
             flagDividend = 1;
-        } else if (divisor < 0 && dividend < 0) {
+        } else if (divisor < 0) {
             divisor = divisor * (-1);
             dividend = dividend * (-1);
             flagBoth = 1;

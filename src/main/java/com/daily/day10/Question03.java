@@ -22,7 +22,7 @@ import java.util.Scanner;
 public class Question03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String inputCode = "";
+        String inputCode;
         do {
             String code = verificationCode();
             System.out.println("生成的验证码为：" + code);

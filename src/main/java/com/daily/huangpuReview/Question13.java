@@ -31,8 +31,8 @@ public class Question13 {
 }
 
 class ShopCart {
-    private Scanner scanner = new Scanner(System.in);
-    private ArrayList<Goods> goodsList = new ArrayList<>();
+    private final Scanner scanner = new Scanner(System.in);
+    private final ArrayList<Goods> goodsList = new ArrayList<>();
 
     public void start() {
         System.out.println("**************购物车**************");
@@ -67,15 +67,9 @@ class ShopCart {
 
 
     private void updateGoods() {
-        while (true) {
-
-        }
     }
 
     private void deleteGoods() {
-        while (true) {
-
-        }
     }
 
     private void addGoods() {

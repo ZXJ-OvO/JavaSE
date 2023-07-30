@@ -10,9 +10,9 @@ package com.daily.huangpuTest;
  */
 public class Test01 {
     public static void main(String[] args) {
-        int ge = 0;
-        int shi = 0;
-        int bai = 0;
+        int ge;
+        int shi;
+        int bai;
         int sum;
 
 

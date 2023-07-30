@@ -5,13 +5,13 @@ package com.daily.huangpuReview;
  */
 public class Question04 {
     public static void main(String[] args) {
-        System.out.println(searchData(100, 1000));
+        System.out.println(searchData());
 
     }
 
-    private static int searchData(int start, int end) {
+    private static int searchData() {
         int count = 0;
-        for (int i = start; i < end; i++) {
+        for (int i = 100; i < 1000; i++) {
             Boolean number = isPrimeNumber(i);
             if (number) count++;
         }

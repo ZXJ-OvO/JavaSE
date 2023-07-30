@@ -25,14 +25,10 @@ public class Question07 {
             arrayList.add(palindromicString.charAt(i));
         }
         Collections.reverse(arrayList);
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (Character character : arrayList) {
-            result += character;
+            result.append(character);
         }
-        if (result.equals(palindromicString)) {
-            System.out.println(true);
-        } else {
-            System.out.println(false);
-        }
+        System.out.println(result.toString().equals(palindromicString));
     }
 }

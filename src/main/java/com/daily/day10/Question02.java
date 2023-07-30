@@ -9,7 +9,7 @@ public class Question02 {
     public static void main(String[] args) {
         int[] array = {10, 2, 30, 4, 50, 30};
         ArrayList<Integer> indexList = selectIndex(array, 30);
-        if (indexList.size() > 0)
+        if (!indexList.isEmpty())
             System.out.println("30在array数组中的索引有" + indexList.size() + "个" + "分别是：" + indexList);
         else
             System.out.println("-1");

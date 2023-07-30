@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * 第三题:
@@ -39,7 +38,7 @@ public class Question03 {
         students.add(student2);
         students.add(student3);
 
-        Collections.sort(students, (o1, o2) -> o2.getScore() - o1.getScore());
+        students.sort((o1, o2) -> o2.getScore() - o1.getScore());
         System.out.println("语文成绩最高的分数: " + students.get(0).getScore());
         System.out.println("三名学生语文成绩的平均值: " + (student1.getScore() + student2.getScore() + student3.getScore()) / 3);
     }

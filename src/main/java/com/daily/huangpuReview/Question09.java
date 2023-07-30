@@ -20,7 +20,7 @@ public class Question09 {
                 System.out.println("输入的太大");
             } else if (inputNumber < randomNumber) {
                 System.out.println("输入的太小");
-            } else if (inputNumber == randomNumber) {
+            } else {
                 System.out.println("猜对了" + "耗费" + step + "步");
                 break;
             }
