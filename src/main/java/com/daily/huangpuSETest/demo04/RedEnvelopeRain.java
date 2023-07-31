@@ -63,7 +63,6 @@ class Employee extends Thread {
 
     public void run() {
         while (true) {
-
             // 当前红包索引
             int envelopeIndex;
 
