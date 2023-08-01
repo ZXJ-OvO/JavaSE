@@ -24,6 +24,11 @@ public class Question01 {
         Class<? extends Stu> aClass2 = stu.getClass();
         System.out.println(aClass2);
 
+        // 获得类的全限定名
+        System.out.println(aClass2.getName());
+        // 获得类的简单名（就是类名本身）
+        System.out.println(aClass2.getSimpleName());
+
     }
 
 

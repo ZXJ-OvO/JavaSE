@@ -1,4 +1,4 @@
-package com.zxj.day18.review.base;
+package com.review.multiThread;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

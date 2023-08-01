@@ -1,4 +1,4 @@
-package com.zxj.day18.review.base;
+package com.review.multiThread;
 
 /**
  * 线程常用API
