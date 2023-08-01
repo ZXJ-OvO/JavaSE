@@ -28,16 +28,11 @@ public class DestinationVoteInfo {
     public static void main(String[] args) {
 
         // 题目没有要求解析，则直接封装数据
-        Student student1 = new Student("张全蛋儿", new String[]{"农家乐", "野外拓展"});
-        Student student2 = new Student("李二狗子", new String[]{"轰趴", "野外拓展", "健身房"});
-        Student student3 = new Student("翠花", new String[]{"野外拓展"});
-        Student student4 = new Student("小帅", new String[]{"轰趴", "健身房"});
-        Student student5 = new Student("有容", new String[]{"农家乐"});
-        studentArrayList.add(student1);
-        studentArrayList.add(student2);
-        studentArrayList.add(student3);
-        studentArrayList.add(student4);
-        studentArrayList.add(student5);
+        studentArrayList.add(new Student("张全蛋儿", new String[]{"农家乐", "野外拓展"}));
+        studentArrayList.add(new Student("李二狗子", new String[]{"轰趴", "野外拓展", "健身房"}));
+        studentArrayList.add(new Student("翠花", new String[]{"野外拓展"}));
+        studentArrayList.add(new Student("小帅", new String[]{"轰趴", "健身房"}));
+        studentArrayList.add(new Student("有容", new String[]{"农家乐"}));
 
         // 计算每个地点的投票人数
         Long farmPartyCount = headCount("农家乐");
@@ -45,7 +40,7 @@ public class DestinationVoteInfo {
         Long boomCount = headCount("轰趴");
         Long gymCount = headCount("健身房");
 
-        System.out.println("\n1、每个去处想去的人数统计：");
+        System.out.println("1、每个去处想去的人数统计：");
         System.out.println("农家乐：" + farmPartyCount + " 人");
         System.out.println("野外拓展：" + fieldExpansionCount + " 人");
         System.out.println("轰趴：" + boomCount + " 人");
@@ -70,17 +65,15 @@ public class DestinationVoteInfo {
 
         System.out.println("\n3、以下同学没有前往得票最高的场所：");
         headCount(maxVoteDestination);
-
     }
-
 
     public static void headCount(ArrayList<String> maxVoteDestination) {
         ArrayList<String> list = new ArrayList<>();
         for (Student student : studentArrayList) {
             // 使用集合装载当前学生投票地点和最高得票地点
             String[] destinations = student.getDestination();
-            for (String destination : destinations) list.add(destination);
-            for (String maxVote : maxVoteDestination) list.add(maxVote);
+            list.addAll(Arrays.asList(destinations));
+            list.addAll(maxVoteDestination);
             List<String> collect = list.stream().distinct().collect(Collectors.toList());
 
             // 去重前后集合长度相等的意味着此学生中的地点数组中不含目标地点，则输出

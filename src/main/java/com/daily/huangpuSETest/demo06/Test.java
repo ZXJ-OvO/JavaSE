@@ -1,14 +1,14 @@
 package com.daily.huangpuSETest.demo06;
 
 /**
- * * 1、在MyLinkedList类中，开发一个sort方法，支持对链表进行升序排序，写完后需要分别测试对这两个链表排序，并分别遍历输出。
- * * 2、在MyLinkedList类中，开发一个mergeSort方法，支持将这两个升序排序的链表，再次合并成一个新链表，要求新链表中的节点仍然是递增排序的。
+ * 1、在MyLinkedList类中，开发一个sort方法，支持对链表进行升序排序，写完后需要分别测试对这两个链表排序，并分别遍历输出。
+ * 2、在MyLinkedList类中，开发一个mergeSort方法，支持将这两个升序排序的链表，再次合并成一个新链表，要求新链表中的节点仍然是递增排序的。
  * 示例1：
- * 输入：head1 ->  **2 → 4 → 1**,      head2   →  **4 →  1  →  3**
- * 返回：head3 ->  **1->1->2->3->4->4**
- * **评分细则**
- * * 能正确排序并遍历链表：6分
- * * 能合并并排序：10分
+ * 输入：head1 ->  2 → 4 → 1,      head2 →  4 → 1 → 3
+ * 返回：head3 ->  1 -> 1 -> 2 -> 3 -> 4 -> 4
+ * 评分细则
+ * 能正确排序并遍历链表：6分
+ * 能合并并排序：10分
  */
 public class Test {
     public static void main(String[] args) {
@@ -32,5 +32,14 @@ public class Test {
 
         // 功能2：在MyLinkedList类中，开发一个mergeSort方法，支持将这两个升序排序的链表，合并成一个新链表，要求新链表中的节点仍然是递增排序的。
         // ，然后对新链表遍历输出
+
+        System.out.println(list1.foreach());
+        list1.sort();
+        System.out.println(list1.foreach());
+
+        MyLinkedList<?> myLinkedList = list1.mergeSort(list1, list2);
+        System.out.println(myLinkedList.foreach());
+
+
     }
 }

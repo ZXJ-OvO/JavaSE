@@ -6,6 +6,8 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static java.lang.Thread.sleep;
+
 /**
  * **需求**
  * * 红包雨游戏，某企业有100名员工，员工的工号依次是1, 2，3, 4，..到100。
@@ -21,8 +23,6 @@ public class RedEnvelopeRain {
     public static ArrayList<Employee> employeesInvolved = new ArrayList<>();
     // 存放红包
     public static final ArrayList<Integer> redEnvelopeArrayList = new ArrayList<>();
-    // 存放单个红包对应的锁
-    public static final Object[] redEnvelopeArrayListLocks = new Object[200];
     // 记录当前已经抢到的红包索引
     public static int currentEnvelopeIndex = 0;
 
@@ -33,16 +33,17 @@ public class RedEnvelopeRain {
         for (int i = 0; i < 200 * 0.2; i++) redEnvelopeArrayList.add(secureRandom.nextInt(31) + 70);
         Collections.shuffle(redEnvelopeArrayList);
 
-        // 每个红包都有一个对应的锁
-        for (int i = 0; i < 200; i++) redEnvelopeArrayListLocks[i] = new Object();
-
         // 模拟100个员工抢红包雨
         for (int i = 0; i < 100; i++) new Employee(i + 1).start();
 
         // 让主线程等待所有执行员工抢红包雨逻辑的线程完成
         for (Employee employee : employeesInvolved) employee.join();
 
-        System.out.println("本次活动结束！请核对下方每人所抢的红包金额！\n");
+
+        sleep(1000);
+
+        System.out.println("\n本次活动结束！请核对下方每人所抢的红包金额！（按总额降序排序）\n");
+
 
         // 按照所抢红包的总金额进行降序排序展示
         employeesInvolved.sort((o1, o2) -> o2.getTotalMoney() - o1.getTotalMoney());
@@ -67,7 +68,7 @@ class Employee extends Thread {
             int envelopeIndex;
 
             // 使用synchronized块确保多个线程不会同时访问共享资源
-            synchronized (RedEnvelopeRain.redEnvelopeArrayListLocks) {
+            synchronized (RedEnvelopeRain.redEnvelopeArrayList) {
                 // 获取当前红包索引
                 envelopeIndex = RedEnvelopeRain.currentEnvelopeIndex;
                 // 当前的红包索引自增，因为当前红包已经被抢，下一个红包的索引为当前索引+1
@@ -87,15 +88,6 @@ class Employee extends Thread {
             totalMoney += envelope;
 
             System.out.println("员工" + empId + " 抢到红包：" + envelope + "元，当前总计：" + totalMoney + "元");
-
-            // TODO: 2023/7/27  在循环中调用 'Thread.sleep()'，可能处于忙等待
-//            try {
-//                TimeUnit.SECONDS.sleep(10); // 休眠2秒
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-
-
 
             // 将已抢的红包从列表中删除
             synchronized (RedEnvelopeRain.redEnvelopeArrayList) {

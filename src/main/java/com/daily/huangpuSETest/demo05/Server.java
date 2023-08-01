@@ -32,7 +32,6 @@ public class Server {
         ServerSocket serverSocket = new ServerSocket(8964);
         System.out.println("服务端启动成功，等待客户端连接中...");
 
-
         while (true) {
             // 阻塞等待客户端的连接请求，一旦与某个客户端成功连接，则返回服务端的Socket对象
             Socket clientSocket = serverSocket.accept();

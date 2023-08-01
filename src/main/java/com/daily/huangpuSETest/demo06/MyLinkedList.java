@@ -1,8 +1,13 @@
 package com.daily.huangpuSETest.demo06;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MyLinkedList<E> {
     // 封装一个链表
     Node<E> head = null;
+
 
     /**
      * 定义了一个私有的内部类，作为链表的结点。
@@ -33,30 +38,58 @@ public class MyLinkedList<E> {
         return head;
     }
 
-    public boolean sort() {
+    public void sort() {
         if (head == null) {
             System.out.println("链表为空");
-            return false;
         }
 
         if (head.next == null) {
             System.out.println("链表中仅存在一个元素，无意义的排序操作");
-            return false;
         }
 
-        Node<E> currentNode = head;
+        ArrayList<Object> list = this.foreach();
 
-        while (currentNode.next != null) {
-//            if (currentNode.data > currentNode.next.data) {
-//                E tempNodeData = currentNode.data;
-//                currentNode.data = currentNode.next.data;
-//                currentNode.next.data = tempNodeData;
-//
-//            }
-//            currentNode = currentNode.next;
+        Object[] objects = new Object[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            objects[i] = list.get(i);
         }
-        return true;
+        Arrays.sort(objects);
+        head = null;
+        for (Object object : objects) {
+            add((E) object);
+        }
+    }
 
+    public MyLinkedList<?> mergeSort(MyLinkedList<E> list1, MyLinkedList<E> list2) {
+        ArrayList<Object> l1 = list1.foreach();
+        ArrayList<Object> l2 = list2.foreach();
+        List<Object> list = new ArrayList<>();
+        list.addAll(l1);
+        list.addAll(l2);
 
+        MyLinkedList<Object> linkedList = new MyLinkedList<>();
+
+        Object[] objects = new Object[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            objects[i] = list.get(i);
+        }
+
+        for (Object o : list) {
+            linkedList.add(o);
+        }
+
+        linkedList.sort();
+        return linkedList;
+    }
+
+    public ArrayList<Object> foreach() {
+        Node<E> node = head;
+        ArrayList<Object> list = new ArrayList<>();
+        while (node != null) {
+            E data = node.data;
+            list.add(data);
+            node = node.next;
+        }
+        return list;
     }
 }
