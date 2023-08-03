@@ -17,7 +17,7 @@ public class Test01 {
     public static void main(String[] args) throws Exception {
 
         // 1、解析properties文件的数据
-        File file = new File("src\\Demo01\\songs.properties");
+        File file = new File("com/daily/finalExam/Demo01/songs.properties");
         FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader);
         Properties properties = new Properties();
@@ -80,7 +80,7 @@ public class Test01 {
         for (Songs songs : songsArrayList) {
             properties1.setProperty(songs.getName(), songs.getId() + "," + songs.getSinger() + "," + songs.getTime() + "," + songs.getLike() + "," + songs.getDate());
         }
-        File file1 = new File("src\\Demo01\\songs_date.properties");
+        File file1 = new File("songs_date.properties");
         FileOutputStream fileOutputStream = new FileOutputStream(file1);
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
         properties1.store(bufferedOutputStream, "songs_date.properties");
